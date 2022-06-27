@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project name="Congress CRM Web Service" basedir="." default="local_deploy">
+	<description>
+        Web service that manages transactions
+    </description>
+
+	<property file="build.properties" />
+
+	<path id="class.path">
+		<fileset dir="lib">
+			<include name="**/*.jar" />
+		</fileset>
+		<dirset dir="${build.dir}" includes="**" />
+		<dirset dir="${proyect.libraries.home}/build" includes="**" />
+	</path>
+
+	<taskdef name="wscompile" classname="com.sun.xml.rpc.tools.ant.Wscompile">
+		<classpath refid="class.path" />
+	</taskdef>
+
+	<taskdef name="xdoclet" classname="xdoclet.DocletTask" classpathref="class.path">
+		<classpath refid="class.path" />
+	</taskdef>
+
+	<target name="init">
+
+		<delete>
+			<fileset dir="${webapp.base}" includes="**/*" />
+		</delete>
+		<mkdir dir="${webapp.base}/WEB-INF/classes" />
+		<mkdir dir="${webapp.base}/WEB-INF/wsdl" />
+		<mkdir dir="${webapp.base}/WEB-INF/lib" />
+		<mkdir dir="xml/crm" />
+		<mkdir dir="xml/reports" />
+		<mkdir dir="xml/wsdl2" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${proyect.gui.home}/src/crm/services/sei" />
+	</target>
+
+	<target name="make_library">
+		<mkdir dir="${proyect.libraries.home}/dist" />
+		<jar jarfile="${proyect.libraries.home}/dist/libCRM.jar">
+			<fileset dir="${proyect.libraries.home}/build">
+				<include name="**/*.class" />
+
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="create_webservice" depends="init,create_webservice_config">
+		<!-- crm -->
+		<exec executable="${wscompile.path}">
+			<arg line="-verbose -cp ${build.dir}${cp.separator}${proyect.libraries.home}${file.separator}build${cp.separator}${proyect.services.home}${file.separator}lib${file.separator}axis.jar  -gen:server  -d ${webapp.base}${file.separator}WEB-INF${file.separator}wsdl -mapping ${webapp.base}${file.separator}WEB-INF${file.separator}mapping-crm.xml ${wsconfig.url}" />
+		</exec>
+
+		<!-- crm wsdl2-->
+		<exec executable="${wscompile.path}">
+			<arg line="-verbose -cp ${build.dir}${cp.separator}${proyect.libraries.home}${file.separator}build${cp.separator}${proyect.services.home}${file.separator}lib${file.separator}axis.jar  -gen:server  -d ${webapp.base}${file.separator}WEB-INF${file.separator}wsdl -mapping ${webapp.base}${file.separator}WEB-INF${file.separator}mapping-crm-wsdl2.xml ${wsconfig.wsdl2.url}" />
+		</exec>
+
+		<!-- report -->
+		<exec executable="${wscompile.path}">
+			<arg line="-verbose -cp ${build.dir}${cp.separator}${proyect.libraries.home}${file.separator}build${cp.separator}${proyect.services.home}${file.separator}lib${file.separator}axis.jar  -gen:server  -d ${webapp.base}${file.separator}WEB-INF${file.separator}wsdl -mapping ${webapp.base}${file.separator}WEB-INF${file.separator}mapping-report.xml ${wsconfig.report.url}" />
+		</exec>
+
+		<!--
+	    <wscompile
+	        mapping="${webapp.base}${file.separator}WEB-INF${file.separator}report-mappings.xml"
+	        server="true"
+	    	xPrintStackTrace="true"
+	    	verbose="true"
+	        base="web/WEB-INF/classes"
+	        nonClassDir="${webapp.base}${file.separator}WEB-INF${file.separator}wsdl"
+	        config="${wsconfig.report.url}">
+	        <classpath refid="class.path"/>
+	        <classpath path="web/WEB-INF/classes" />
+	    	<classpath path="/home/hernux/usr/jdk1.5.0_04/lib/tools.jar" />
+	    </wscompile>
+		-->
+
+		<!--copy todir="${proyect.gui.home}/src/crm/services/sei">
+			<fileset dir="${proyect.services.home}/src/crm/services/sei">
+				<include name="*.java" />
+			</fileset>
+		</copy-->
+	</target>
+
+
+	<target name="prepare_webdir">
+		<copy todir="${webapp.base}/WEB-INF/classes" overwrite="true">
+			<fileset dir="${build.dir}">
+				<include name="**/*.*" />
+				<include name="**/*.jasper" />
+				<include name="**/imagenes/*.*" />
+				<exclude name="crm/services/presupuesto/**" />
+			</fileset>
+			<fileset dir="${build.dir}" includes="*.properties" />
+		</copy>
+
+		<copy file="${proyect.services.home}/xml/web.xml" tofile="${webapp.base}/WEB-INF/web.xml" overwrite="true" />
+		<copy file="${proyect.services.home}/xml/webservices.xml" tofile="${webapp.base}/WEB-INF/webservices.xml" overwrite="true" />
+
+	</target>
+
+	<target name="create_war" depends="prepare_webdir" description="create server_transaction_manager.war">
+
+		<!--copy file="${proyect.services.home}/lib/axis.jar" 
+		    			tofile="${webapp.base}/WEB-INF/lib/axis.jar" overwrite="false"/-->
+
+		<jar jarfile="${webapp.base}/WEB-INF/lib/libCRM.jar">
+			<fileset dir="${proyect.libraries.home}/build">
+				<include name="crm/libraries/util/**/*.class" />
+				<include name="crm/libraries/sql/**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist.dir}/congresscrm.war" basedir="${webapp.base}" />
+
+		<jar jarfile="${dist.dir}/libCRM.har">
+			<metainf dir="${proyect.libraries.home}/xml" includes="hibernate-service.xml" />
+			<fileset dir="${proyect.libraries.home}/build">
+				<include name="**/*.class" />
+				<exclude name="crm/libraries/util/**/*.class" />
+				<exclude name="crm/libraries/sql/**/*.class" />
+			</fileset>
+			<fileset dir="${proyect.libraries.home}/xml" includes="**/*.hbm.xml" />
+			<fileset dir="${proyect.libraries.home}/xml" includes="hibernate.cfg.xml" />
+		</jar>
+
+		<delete>
+			<fileset dir="${dist.dir}" includes="congress.ear" />
+		</delete>
+
+		<jar jarfile="${dist.dir}/congress.ear">
+			<fileset dir="${dist.dir}" includes="congresscrm.war" />
+			<fileset dir="${dist.dir}" includes="libCRM.har" />
+			<metainf dir="${proyect.services.home}/xml" includes="application.xml" />
+			<metainf dir="${proyect.services.home}/xml" includes="jboss-app.xml" />
+		</jar>
+
+
+		<delete>
+			<fileset dir="${dist.dir}">
+				<include name="*" />
+				<exclude name="congress.ear" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="local_deploy" depends="create_webservice,local_redeploy" description="deploy web services to local pc" />
+
+	<target name="local_redeploy" depends="create_war" description="deploy web services to local pc">
+		<copy todir="${local.deploy.dir}" overwrite="yes">
+			<fileset dir="${dist.dir}" includes="**/*.ear" />
+		</copy>
+		<!--delete>
+			<fileset dir="${dist.dir}" includes="congress.ear" />
+		</delete-->
+		
+	</target>
+
+	<target name="remote_deploy_all" depends="create_webservice,remote_redeploy_development,remote_redeploy_production" description="deploy web services to all webserver" />
+
+	<target name="remote_deploy_interrental" depends="create_webservice,remote_redeploy_interrental" description="deploy web services to webserver" />
+
+	<target name="remote_redeploy_interrental" depends="create_war" description="deploy web services to local pc">
+		<ftp verbose="yes" passive="yes" depends="yes" remotedir="/server/default/deploy" server="172.16.100.38" userid="saciar" password="itsupport789">
+			<!--copy todir="${remote.prod.deploy.dir}" overwrite="yes">
+								  		<fileset dir="${dist.dir}" includes="congress.ear"/>  		
+								  	</copy-->
+			<fileset dir="C:/Users/Evento/workspace/services/dist" />
+		</ftp>
+	</target>
+
+	<target name="remote_deploy_development" depends="create_webservice,remote_redeploy_development" description="deploy web services to webserver" />
+
+	<target name="remote_redeploy_development" depends="create_war" description="deploy web services to local pc">
+		<copy todir="${local.deploy.dir}" overwrite="yes">
+			<fileset dir="${dist.dir}" includes="congress.ear" />
+		</copy>
+		<!--delete>
+			<fileset dir="${dist.dir}" includes="congress.ear" />
+		</delete-->
+	</target>
+
+	<target name="remote_deploy_production" depends="create_webservice,remote_redeploy_production" description="deploy web services to webserver" />
+
+	<target name="remote_redeploy_production" depends="create_war" description="deploy web services to local pc">
+
+		<ftp verbose="yes" passive="yes" depends="yes" remotedir="/server/default/deploy" server="crm.congressrental.com" userid="jboss" password="itsupport789">
+			<!--copy todir="${remote.prod.deploy.dir}" overwrite="yes">
+					  		<fileset dir="${dist.dir}" includes="congress.ear"/>  		
+					  	</copy-->
+			<fileset dir="C:/Users/Sergio/eclipse/services/dist" />
+		</ftp>
+	</target>
+
+	<target name="remote_mendoza_deploy_production" depends="create_webservice,remote_mendoza_redeploy_production" description="deploy web services to webserver" />
+
+	<target name="remote_mendoza_redeploy_production" depends="create_war" description="deploy web services to local pc">
+
+		<ftp verbose="yes" passive="yes" depends="yes" remotedir="/server/default/deploy" server="190.15.198.73" userid="mendoza" password="itsupport">
+			<fileset dir="C:/workspace/services/dist" />
+		</ftp>
+	</target>
+
+
+	<target name="borrar" description="deploy web services to local pc">
+
+		<ftp verbose="yes" passive="yes" depends="yes" remotedir="/server/default/lib" server="201.251.127.235" userid="jboss" password="FA310XYM">
+			<fileset dir="C:/workspace/services/lib" />
+		</ftp>
+	</target>
+
+	<target name="create_webservice_config" description="create_webservice_config">
+		<delete>
+			<fileset dir="xml" includes="**/config.xml,**/web.xml,**/webservices.xml" />
+		</delete>
+
+		<!-- CRM -->
+		<xdoclet destDir="xml/crm">
+			<fileset dir="src" includes="crm/services/sei/*SEI.java" />
+			<template destinationFile="config.xml" templateFile="xdt/config-crm.xdt" />
+		</xdoclet>
+
+		<!-- CRM wsdl2-->
+		<xdoclet destDir="xml/wsdl2">
+			<fileset dir="src" includes="crm/services/wsdl2/sei/*SEI.java" />
+			<template destinationFile="config.xml" templateFile="xdt/config-crm-wsdl2.xdt" />
+		</xdoclet>
+
+		<!-- Reports -->
+		<xdoclet destDir="xml/reports">
+			<fileset dir="src" includes="crm/services/report/sei/*SEI.java" />
+			<template destinationFile="config.xml" templateFile="xdt/config-report.xdt" />
+		</xdoclet>
+
+		<!-- Comunes -->
+		<xdoclet destDir="xml">
+			<fileset dir="src" includes="**/*Manager.java,**/*Report.java" />
+			<template destinationFile="web.xml" templateFile="xdt/web.xdt" />
+			<template destinationFile="webservices.xml" templateFile="xdt/webservices.xdt" />
+		</xdoclet>
+	</target>
+</project>

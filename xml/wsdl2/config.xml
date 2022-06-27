@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+    <service name="CongressCRMServiceWSDL2"
+             targetNamespace="http://servertransactionmanager/"
+             typeNamespace="http://servertransactionmanager/types"
+             packageName="crm.services.transaction">
+
+	    <interface name="crm.services.wsdl2.sei.EquipamientosManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.SmsManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.DestinatarioOSManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoValidezManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.EstadoEquiposManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.AdministradorManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoSeguridadManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoFPagoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoFooterManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.VariacionFechaManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.FuenteEventoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoCondReservaManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.FamiliaEquiposManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.EgresoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.FacturasManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.MonedaExtranjeraManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.TransporteManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.FeriadosManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoPeriodoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.TipoFacturaManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.TipoCobradorManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoPersonalManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.ModoIngEquiposManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.ClienteContactoCobranzaManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.VariacionMesManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoHeaderManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.DepositosManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.GastosManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.UnidadAdministradorManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.UnidadesAdministrativasManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoCancelacionManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.MarcasEquiposManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.SeguridadEquiposManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.TipoReciboManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoSignatureManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoInstalacionManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.AgendaTareasCobranzasManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.EquiposSubFamiliasManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.RacksManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.AgendaPptoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.EgresoEquipoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.EquiposFamiliasManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoCondPagoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.PrtPptoTipoPresupuestoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.IngresoEquipoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.DestinatarioOFManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.MovimientoEquipoManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.TipoVentaManagerSEI"/> 
+
+	    <interface name="crm.services.wsdl2.sei.EquiposManagerSEI"/> 
+
+    </service>
+</configuration> 

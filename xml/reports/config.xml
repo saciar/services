@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+    <service name="CongressReportService"
+             targetNamespace="http://servertransactionmanager/"
+             typeNamespace="http://servertransactionmanager/types"
+             packageName="crm.services.transaction">
+
+	    <interface name="crm.services.report.sei.RemitoReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.CondicionPagoGerenciaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.PresupuestosConfirmadosGerenciaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.OsDesconfirmadaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.InfoMensualReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.PresupuestosCobradosGerenciaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.PresupuestoReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.InformeOSReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.PresupuestoExcelReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.LimitesGerenciaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.OrdenServicioReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.ListaPreciosReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.PorcentajeGerenciaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.DiaryPlannerReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.SubcontratadosGerenciaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.InfoSemanalReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.EventReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.OrdenFacturacionReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.PorcentajeComercialesReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.OrdenCompraReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.ACobrarReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.AdelantoReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.PresupuestosGerenciaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.LimitesYEstadosGerenciaReportSEI"/> 
+
+	    <interface name="crm.services.report.sei.ReferenciaGerenciaReportSEI"/> 
+
+    </service>
+</configuration> 

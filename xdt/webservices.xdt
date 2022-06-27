@@ -1,0 +1,93 @@
+<webservices xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+                        http://www.ibm.com/webservices/xsd/j2ee_web_services_1_1.xsd" 
+    version="1.1">
+    <webservice-description>
+        <webservice-description-name>CongressCRMService</webservice-description-name>
+        <wsdl-file>WEB-INF/wsdl/CongressCRMService.wsdl</wsdl-file>
+        <jaxrpc-mapping-file>WEB-INF/mapping-crm.xml</jaxrpc-mapping-file>
+       
+        <XDtClass:forAllClasses type="crm.services.transaction.ManagerService" extent="hierarchy">
+      	
+        <port-component>
+            <port-component-name>
+            	<XDtClass:className />
+            </port-component-name>
+            <wsdl-port>
+            	<XDtClass:className />SEIPort
+            </wsdl-port>
+            <service-endpoint-interface>
+                crm.services.sei.<XDtClass:className />SEI
+            </service-endpoint-interface>
+            <service-impl-bean>
+                <servlet-link>
+                	<XDtClass:className />WS
+                </servlet-link>
+            </service-impl-bean>
+        </port-component>
+
+ </XDtClass:forAllClasses>
+
+    </webservice-description>
+    
+        <webservice-description>
+        <webservice-description-name>CongressCRMServiceWSDL2</webservice-description-name>
+        <wsdl-file>WEB-INF/wsdl/CongressCRMServiceWSDL2.wsdl</wsdl-file>
+        <jaxrpc-mapping-file>WEB-INF/mapping-crm-wsdl2.xml</jaxrpc-mapping-file>
+       
+        <XDtClass:forAllClasses type="crm.services.wsdl2.manager.WSDL2Service" extent="hierarchy">
+      	
+        <port-component>
+            <port-component-name>
+            	<XDtClass:className />
+            </port-component-name>
+            <wsdl-port>
+            	<XDtClass:className />SEIPort
+            </wsdl-port>
+            <service-endpoint-interface>
+                crm.services.wsdl2.sei.<XDtClass:className />SEI
+            </service-endpoint-interface>
+            <service-impl-bean>
+                <servlet-link>
+                	<XDtClass:className />WS
+                </servlet-link>
+            </service-impl-bean>
+        </port-component>
+
+ </XDtClass:forAllClasses>
+
+    </webservice-description>
+    
+    
+    
+    <webservice-description>
+        <webservice-description-name>CongressReportService</webservice-description-name>
+        <wsdl-file>WEB-INF/wsdl/CongressReportService.wsdl</wsdl-file>
+        <jaxrpc-mapping-file>WEB-INF/mapping-report.xml</jaxrpc-mapping-file>
+       
+        <XDtClass:forAllClasses type="crm.services.report.manager.ReportService" extent="hierarchy">
+      	
+        <port-component>
+            <port-component-name>
+            	<XDtClass:className />
+            </port-component-name>
+            <wsdl-port>
+            	<XDtClass:className />SEIPort
+            </wsdl-port>
+            <service-endpoint-interface>
+            	crm.services.report.sei.<XDtClass:className />SEI
+            </service-endpoint-interface>
+            <service-impl-bean>
+                <servlet-link>
+                	<XDtClass:className />WS
+                </servlet-link>
+            </service-impl-bean>
+        </port-component>
+
+ </XDtClass:forAllClasses>
+
+    </webservice-description>
+    
+    
+</webservices>

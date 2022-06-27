@@ -1,0 +1,2 @@
+crm.services.report.manager.OsDesconfirmadaCreator
+crm.services.report.manager.OSDesconfirmadaReportDSBuilder

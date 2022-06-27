@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+                             http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+
+    <servlet>
+        <servlet-name>OrdenFacturacionReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.OrdenFacturacionReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>OrdenFacturacionReportWS</servlet-name>
+        <url-pattern>/OrdenFacturacionReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServicioManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ServicioManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ServicioManagerWS</servlet-name>
+        <url-pattern>/ServicioManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReferenciaGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.ReferenciaGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ReferenciaGerenciaReportWS</servlet-name>
+        <url-pattern>/ReferenciaGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TestReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.TestReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TestReportWS</servlet-name>
+        <url-pattern>/TestReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DiaryPlannerReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.DiaryPlannerReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>DiaryPlannerReportWS</servlet-name>
+        <url-pattern>/DiaryPlannerReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MarcasEquiposManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.MarcasEquiposManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>MarcasEquiposManagerWS</servlet-name>
+        <url-pattern>/MarcasEquiposManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TransporteManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.TransporteManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TransporteManagerWS</servlet-name>
+        <url-pattern>/TransporteManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FechasProcesoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.FechasProcesoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>FechasProcesoManagerWS</servlet-name>
+        <url-pattern>/FechasProcesoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CondicionPagoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.CondicionPagoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>CondicionPagoManagerWS</servlet-name>
+        <url-pattern>/CondicionPagoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MedioPagoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.MedioPagoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>MedioPagoManagerWS</servlet-name>
+        <url-pattern>/MedioPagoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PorcentajeGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.PorcentajeGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PorcentajeGerenciaReportWS</servlet-name>
+        <url-pattern>/PorcentajeGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LugarEventoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.LugarEventoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>LugarEventoManagerWS</servlet-name>
+        <url-pattern>/LugarEventoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EgresoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.EgresoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EgresoManagerWS</servlet-name>
+        <url-pattern>/EgresoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClienteFacturacionManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ClienteFacturacionManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ClienteFacturacionManagerWS</servlet-name>
+        <url-pattern>/ClienteFacturacionManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoSeguridadManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoSeguridadManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoSeguridadManagerWS</servlet-name>
+        <url-pattern>/PrtPptoSeguridadManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EquiposSubFamiliasManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.EquiposSubFamiliasManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EquiposSubFamiliasManagerWS</servlet-name>
+        <url-pattern>/EquiposSubFamiliasManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ComisionSupervisorManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ComisionSupervisorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ComisionSupervisorManagerWS</servlet-name>
+        <url-pattern>/ComisionSupervisorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoCondReservaManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoCondReservaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoCondReservaManagerWS</servlet-name>
+        <url-pattern>/PrtPptoCondReservaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FuenteEventoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.FuenteEventoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>FuenteEventoManagerWS</servlet-name>
+        <url-pattern>/FuenteEventoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EquiposManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.EquiposManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EquiposManagerWS</servlet-name>
+        <url-pattern>/EquiposManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UsuarioManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.UsuarioManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>UsuarioManagerWS</servlet-name>
+        <url-pattern>/UsuarioManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DiasAVencerManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.DiasAVencerManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>DiasAVencerManagerWS</servlet-name>
+        <url-pattern>/DiasAVencerManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoInstalacionManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.sei.PrtPptoInstalacionManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoInstalacionManagerWS</servlet-name>
+        <url-pattern>/PrtPptoInstalacionManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoHeaderManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoHeaderManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoHeaderManagerWS</servlet-name>
+        <url-pattern>/PrtPptoHeaderManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DestinatarioOFManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.DestinatarioOFManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>DestinatarioOFManagerWS</servlet-name>
+        <url-pattern>/DestinatarioOFManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AgendaTareasCobranzasManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.AgendaTareasCobranzasManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>AgendaTareasCobranzasManagerWS</servlet-name>
+        <url-pattern>/AgendaTareasCobranzasManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IngresoEquipoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.IngresoEquipoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>IngresoEquipoManagerWS</servlet-name>
+        <url-pattern>/IngresoEquipoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProveedorManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ProveedorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ProveedorManagerWS</servlet-name>
+        <url-pattern>/ProveedorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PorcentajeComercialesReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.PorcentajeComercialesReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PorcentajeComercialesReportWS</servlet-name>
+        <url-pattern>/PorcentajeComercialesReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UnidadComercialManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.UnidadComercialManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>UnidadComercialManagerWS</servlet-name>
+        <url-pattern>/UnidadComercialManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VistaFamiliaServicioIdiomaManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.VistaFamiliaServicioIdiomaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>VistaFamiliaServicioIdiomaManagerWS</servlet-name>
+        <url-pattern>/VistaFamiliaServicioIdiomaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserAccessHistoryManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.UserAccessHistoryManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>UserAccessHistoryManagerWS</servlet-name>
+        <url-pattern>/UserAccessHistoryManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoFacturaManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.TipoFacturaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoFacturaManagerWS</servlet-name>
+        <url-pattern>/TipoFacturaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FeriadosManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.FeriadosManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>FeriadosManagerWS</servlet-name>
+        <url-pattern>/FeriadosManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OsDesconfirmadaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.OsDesconfirmadaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>OsDesconfirmadaReportWS</servlet-name>
+        <url-pattern>/OsDesconfirmadaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IdiomaManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.IdiomaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>IdiomaManagerWS</servlet-name>
+        <url-pattern>/IdiomaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UnidadNegocioManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.UnidadNegocioManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>UnidadNegocioManagerWS</servlet-name>
+        <url-pattern>/UnidadNegocioManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UnidadesAdministrativasManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.UnidadesAdministrativasManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>UnidadesAdministrativasManagerWS</servlet-name>
+        <url-pattern>/UnidadesAdministrativasManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LugarEventoContactoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.LugarEventoContactoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>LugarEventoContactoManagerWS</servlet-name>
+        <url-pattern>/LugarEventoContactoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoEventoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.TipoEventoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoEventoManagerWS</servlet-name>
+        <url-pattern>/TipoEventoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UnidadVendedorManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.UnidadVendedorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>UnidadVendedorManagerWS</servlet-name>
+        <url-pattern>/UnidadVendedorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VendedorManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.VendedorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>VendedorManagerWS</servlet-name>
+        <url-pattern>/VendedorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PresupuestosManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.PresupuestosManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PresupuestosManagerWS</servlet-name>
+        <url-pattern>/PresupuestosManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CondicionPagoGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.CondicionPagoGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>CondicionPagoGerenciaReportWS</servlet-name>
+        <url-pattern>/CondicionPagoGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PresupuestosConfirmadosGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.PresupuestosConfirmadosGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PresupuestosConfirmadosGerenciaReportWS</servlet-name>
+        <url-pattern>/PresupuestosConfirmadosGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EstadoEventoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.EstadoEventoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EstadoEventoManagerWS</servlet-name>
+        <url-pattern>/EstadoEventoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoSignatureManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoSignatureManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoSignatureManagerWS</servlet-name>
+        <url-pattern>/PrtPptoSignatureManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CategVendedorManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.CategVendedorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>CategVendedorManagerWS</servlet-name>
+        <url-pattern>/CategVendedorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrdenServicioReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.OrdenServicioReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>OrdenServicioReportWS</servlet-name>
+        <url-pattern>/OrdenServicioReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MonedaExtranjeraManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.MonedaExtranjeraManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>MonedaExtranjeraManagerWS</servlet-name>
+        <url-pattern>/MonedaExtranjeraManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoUniformeManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.TipoUniformeManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoUniformeManagerWS</servlet-name>
+        <url-pattern>/TipoUniformeManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoLugarEventoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.TipoLugarEventoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoLugarEventoManagerWS</servlet-name>
+        <url-pattern>/TipoLugarEventoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EstadoEquiposManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.EstadoEquiposManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EstadoEquiposManagerWS</servlet-name>
+        <url-pattern>/EstadoEquiposManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RacksManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.RacksManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>RacksManagerWS</servlet-name>
+        <url-pattern>/RacksManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SeguridadEquiposManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.SeguridadEquiposManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>SeguridadEquiposManagerWS</servlet-name>
+        <url-pattern>/SeguridadEquiposManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoArmadoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.TipoArmadoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoArmadoManagerWS</servlet-name>
+        <url-pattern>/TipoArmadoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrdenCompraReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.OrdenCompraReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>OrdenCompraReportWS</servlet-name>
+        <url-pattern>/OrdenCompraReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProvinciaManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ProvinciaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ProvinciaManagerWS</servlet-name>
+        <url-pattern>/ProvinciaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoPeriodoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoPeriodoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoPeriodoManagerWS</servlet-name>
+        <url-pattern>/PrtPptoPeriodoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AsistenteManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.AsistenteManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>AsistenteManagerWS</servlet-name>
+        <url-pattern>/AsistenteManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoTipoPresupuestoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoTipoPresupuestoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoTipoPresupuestoManagerWS</servlet-name>
+        <url-pattern>/PrtPptoTipoPresupuestoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AccesoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.AccesoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>AccesoManagerWS</servlet-name>
+        <url-pattern>/AccesoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UnidadAdministradorManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.UnidadAdministradorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>UnidadAdministradorManagerWS</servlet-name>
+        <url-pattern>/UnidadAdministradorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GerenciaComercialManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.GerenciaComercialManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>GerenciaComercialManagerWS</servlet-name>
+        <url-pattern>/GerenciaComercialManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PresupuestosGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.PresupuestosGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PresupuestosGerenciaReportWS</servlet-name>
+        <url-pattern>/PresupuestosGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InfoMensualReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.InfoMensualReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>InfoMensualReportWS</servlet-name>
+        <url-pattern>/InfoMensualReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PresupuestoExcelReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.PresupuestoExcelReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PresupuestoExcelReportWS</servlet-name>
+        <url-pattern>/PresupuestoExcelReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MovimientoEquipoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.MovimientoEquipoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>MovimientoEquipoManagerWS</servlet-name>
+        <url-pattern>/MovimientoEquipoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LimitesYEstadosGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.LimitesYEstadosGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>LimitesYEstadosGerenciaReportWS</servlet-name>
+        <url-pattern>/LimitesYEstadosGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RemitoReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.RemitoReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>RemitoReportWS</servlet-name>
+        <url-pattern>/RemitoReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DestinatarioOSManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.DestinatarioOSManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>DestinatarioOSManagerWS</servlet-name>
+        <url-pattern>/DestinatarioOSManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EquipamientosManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.EquipamientosManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EquipamientosManagerWS</servlet-name>
+        <url-pattern>/EquipamientosManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LiquidacionComisionesManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.LiquidacionComisionesManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>LiquidacionComisionesManagerWS</servlet-name>
+        <url-pattern>/LiquidacionComisionesManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SubcontratadosGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.SubcontratadosGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>SubcontratadosGerenciaReportWS</servlet-name>
+        <url-pattern>/SubcontratadosGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EgresoEquipoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.EgresoEquipoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EgresoEquipoManagerWS</servlet-name>
+        <url-pattern>/EgresoEquipoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InfoSemanalReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.InfoSemanalReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>InfoSemanalReportWS</servlet-name>
+        <url-pattern>/InfoSemanalReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ComisionManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ComisionManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ComisionManagerWS</servlet-name>
+        <url-pattern>/ComisionManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VendedorUsuarioManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.VendedorUsuarioManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>VendedorUsuarioManagerWS</servlet-name>
+        <url-pattern>/VendedorUsuarioManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoPersonalManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoPersonalManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoPersonalManagerWS</servlet-name>
+        <url-pattern>/PrtPptoPersonalManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoCobradorManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.TipoCobradorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoCobradorManagerWS</servlet-name>
+        <url-pattern>/TipoCobradorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClienteContactoCobranzaManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.ClienteContactoCobranzaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ClienteContactoCobranzaManagerWS</servlet-name>
+        <url-pattern>/ClienteContactoCobranzaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TxSeguimientoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.TxSeguimientoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TxSeguimientoManagerWS</servlet-name>
+        <url-pattern>/TxSeguimientoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PresupuestosCobradosGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.PresupuestosCobradosGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PresupuestosCobradosGerenciaReportWS</servlet-name>
+        <url-pattern>/PresupuestosCobradosGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoVentaManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.TipoVentaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoVentaManagerWS</servlet-name>
+        <url-pattern>/TipoVentaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ACobrarReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.ACobrarReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ACobrarReportWS</servlet-name>
+        <url-pattern>/ACobrarReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClienteManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ClienteManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ClienteManagerWS</servlet-name>
+        <url-pattern>/ClienteManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UnidadBonusManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.UnidadBonusManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>UnidadBonusManagerWS</servlet-name>
+        <url-pattern>/UnidadBonusManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModoIngEquiposManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.ModoIngEquiposManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ModoIngEquiposManagerWS</servlet-name>
+        <url-pattern>/ModoIngEquiposManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ResultadoSeguimientoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ResultadoSeguimientoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ResultadoSeguimientoManagerWS</servlet-name>
+        <url-pattern>/ResultadoSeguimientoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OperadorManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.OperadorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>OperadorManagerWS</servlet-name>
+        <url-pattern>/OperadorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SeguimientoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.SeguimientoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>SeguimientoManagerWS</servlet-name>
+        <url-pattern>/SeguimientoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CategEventoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.CategEventoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>CategEventoManagerWS</servlet-name>
+        <url-pattern>/CategEventoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EventReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.EventReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EventReportWS</servlet-name>
+        <url-pattern>/EventReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AgendaPptoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.AgendaPptoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>AgendaPptoManagerWS</servlet-name>
+        <url-pattern>/AgendaPptoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SmsManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.SmsManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>SmsManagerWS</servlet-name>
+        <url-pattern>/SmsManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VariacionMesManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.VariacionMesManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>VariacionMesManagerWS</servlet-name>
+        <url-pattern>/VariacionMesManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoCondPagoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoCondPagoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoCondPagoManagerWS</servlet-name>
+        <url-pattern>/PrtPptoCondPagoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdministradorManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.AdministradorManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>AdministradorManagerWS</servlet-name>
+        <url-pattern>/AdministradorManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GastosManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.GastosManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>GastosManagerWS</servlet-name>
+        <url-pattern>/GastosManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CostoOperativoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.CostoOperativoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>CostoOperativoManagerWS</servlet-name>
+        <url-pattern>/CostoOperativoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DescPrecioDiasManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.DescPrecioDiasManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>DescPrecioDiasManagerWS</servlet-name>
+        <url-pattern>/DescPrecioDiasManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FamiliaServManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.FamiliaServManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>FamiliaServManagerWS</servlet-name>
+        <url-pattern>/FamiliaServManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoContactoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.TipoContactoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoContactoManagerWS</servlet-name>
+        <url-pattern>/TipoContactoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ClienteContactoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ClienteContactoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ClienteContactoManagerWS</servlet-name>
+        <url-pattern>/ClienteContactoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListaPrecioCustomManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ListaPrecioCustomManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ListaPrecioCustomManagerWS</servlet-name>
+        <url-pattern>/ListaPrecioCustomManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServicioIdiomaManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ServicioIdiomaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ServicioIdiomaManagerWS</servlet-name>
+        <url-pattern>/ServicioIdiomaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LocalidadManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.LocalidadManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>LocalidadManagerWS</servlet-name>
+        <url-pattern>/LocalidadManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VariacionFechaManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.VariacionFechaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>VariacionFechaManagerWS</servlet-name>
+        <url-pattern>/VariacionFechaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ModalidadContratManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ModalidadContratManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ModalidadContratManagerWS</servlet-name>
+        <url-pattern>/ModalidadContratManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MarcosLiquidacionManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.MarcosLiquidacionManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>MarcosLiquidacionManagerWS</servlet-name>
+        <url-pattern>/MarcosLiquidacionManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DummyManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.DummyManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>DummyManagerWS</servlet-name>
+        <url-pattern>/DummyManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoCancelacionManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoCancelacionManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoCancelacionManagerWS</servlet-name>
+        <url-pattern>/PrtPptoCancelacionManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LimitesGerenciaReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.LimitesGerenciaReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>LimitesGerenciaReportWS</servlet-name>
+        <url-pattern>/LimitesGerenciaReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SucursalManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.SucursalManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>SucursalManagerWS</servlet-name>
+        <url-pattern>/SucursalManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InformeOSReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.InformeOSReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>InformeOSReportWS</servlet-name>
+        <url-pattern>/InformeOSReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VistaPrecioServicioIdiomaManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.VistaPrecioServicioIdiomaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>VistaPrecioServicioIdiomaManagerWS</servlet-name>
+        <url-pattern>/VistaPrecioServicioIdiomaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TituloManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.TituloManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TituloManagerWS</servlet-name>
+        <url-pattern>/TituloManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PresupuestoReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.PresupuestoReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PresupuestoReportWS</servlet-name>
+        <url-pattern>/PresupuestoReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PartidoManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.PartidoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PartidoManagerWS</servlet-name>
+        <url-pattern>/PartidoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServicioDescripcionManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.ServicioDescripcionManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ServicioDescripcionManagerWS</servlet-name>
+        <url-pattern>/ServicioDescripcionManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CategReferenciaManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.CategReferenciaManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>CategReferenciaManagerWS</servlet-name>
+        <url-pattern>/CategReferenciaManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoFPagoManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoFPagoManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoFPagoManagerWS</servlet-name>
+        <url-pattern>/PrtPptoFPagoManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EventoUniformeManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.EventoUniformeManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EventoUniformeManagerWS</servlet-name>
+        <url-pattern>/EventoUniformeManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoFooterManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoFooterManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoFooterManagerWS</servlet-name>
+        <url-pattern>/PrtPptoFooterManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdelantoReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.AdelantoReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>AdelantoReportWS</servlet-name>
+        <url-pattern>/AdelantoReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NuevoClienteManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.NuevoClienteManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>NuevoClienteManagerWS</servlet-name>
+        <url-pattern>/NuevoClienteManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PerfilManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.PerfilManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PerfilManagerWS</servlet-name>
+        <url-pattern>/PerfilManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SalaLugarManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.SalaLugarManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>SalaLugarManagerWS</servlet-name>
+        <url-pattern>/SalaLugarManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrtPptoValidezManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.PrtPptoValidezManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PrtPptoValidezManagerWS</servlet-name>
+        <url-pattern>/PrtPptoValidezManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PaisManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.PaisManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>PaisManagerWS</servlet-name>
+        <url-pattern>/PaisManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CodigoPostalManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.CodigoPostalManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>CodigoPostalManagerWS</servlet-name>
+        <url-pattern>/CodigoPostalManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TipoReciboManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.TipoReciboManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>TipoReciboManagerWS</servlet-name>
+        <url-pattern>/TipoReciboManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FacturasManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.FacturasManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>FacturasManagerWS</servlet-name>
+        <url-pattern>/FacturasManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DepositosManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.DepositosManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>DepositosManagerWS</servlet-name>
+        <url-pattern>/DepositosManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CondIVAManagerWS</servlet-name>
+        <servlet-class>crm.services.transaction.CondIVAManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>CondIVAManagerWS</servlet-name>
+        <url-pattern>/CondIVAManager</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ListaPreciosReportWS</servlet-name>
+        <servlet-class>crm.services.report.manager.ListaPreciosReport</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>ListaPreciosReportWS</servlet-name>
+        <url-pattern>/ListaPreciosReport</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EquiposFamiliasManagerWS</servlet-name>
+        <servlet-class>crm.services.wsdl2.manager.EquiposFamiliasManager</servlet-class>
+    </servlet>    
+    <servlet-mapping>
+        <servlet-name>EquiposFamiliasManagerWS</servlet-name>
+        <url-pattern>/EquiposFamiliasManager</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+    	<session-timeout>0</session-timeout>
+    </session-config>
+</web-app>

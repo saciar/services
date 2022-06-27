@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="remito" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d1652741-0f78-4db9-9ee4-045e45a9cc4e">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nroOs" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT nombre_fantasia, iv_descripcond, CUIT, el_calle, el_nro, el_piso, el_dpto,lc_descriplocalidad FROM tx_ppto t
+inner join mst_cliente on ppto_codcliente = cl_codcliente
+inner join mst_condiva on cl_iva=iv_codcond
+inner join mst_evt_lugar on ppto_evt_lugar=el_codlugar
+inner join mst_localidad on el_loc = lc_id
+where ppto_nroppto = $P{nroOs}]]>
+	</queryString>
+	<field name="nombre_fantasia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="iv_descripcond" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUIT" class="java.math.BigInteger">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="el_calle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="el_nro" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="el_piso" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="el_dpto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lc_descriplocalidad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="276" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b5e9d0e4-0a73-4ab6-833b-7511c1bc2cfe" x="96" y="175" width="477" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_fantasia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6bf73b84-ebea-480f-ae71-fc6be886de38" x="104" y="204" width="317" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{el_calle} +" "+ $F{el_nro} +" Piso: "+ $F{el_piso} +" Dpto: "+$F{el_dpto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="51093504-c5d6-4317-9dfd-f05730be59c6" x="88" y="231" width="308" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{iv_descripcond}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8532825d-0885-4b64-91ae-2a126ee0d4f0" x="408" y="231" width="165" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CUIT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b1dfcc76-b824-44a5-9167-d04c4089d11e" x="396" y="108" width="177" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7ff87702-575f-4320-a239-f605e77daca0" x="421" y="204" width="152" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lc_descriplocalidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="340" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="23fc4629-d398-42bc-bb0b-60d0eaf61bad" x="57" y="0" width="538" height="36"/>
+				<subreportParameter name="nroOs">
+					<subreportParameterExpression><![CDATA[$P{nroOs}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:\\Documents and Settings\\saciar\\Mis documentos\\NetBeansProjects\\CRM3.0\\src\\gui\\report\\remito_equipos.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="200" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

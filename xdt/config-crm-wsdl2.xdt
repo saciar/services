@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+    <service name="CongressCRMServiceWSDL2"
+             targetNamespace="http://servertransactionmanager/"
+             typeNamespace="http://servertransactionmanager/types"
+             packageName="crm.services.transaction">
+
+<XDtClass:forAllClasses type="java.rmi.Remote">
+ 
+	    <interface name="<XDtClass:fullClassName/>"/> 
+
+ </XDtClass:forAllClasses>
+
+
+    </service>
+</configuration> 

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+    <service name="CongressCRMService"
+             targetNamespace="http://servertransactionmanager/"
+             typeNamespace="http://servertransactionmanager/types"
+             packageName="crm.services.transaction">
+
+	    <interface name="crm.services.sei.OperadorManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ServerTransactionManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ServicioIdiomaManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ClienteFacturacionManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ProvinciaManagerSEI"/> 
+
+	    <interface name="crm.services.sei.TxSeguimientoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.CondIVAManagerSEI"/> 
+
+	    <interface name="crm.services.sei.UnidadVendedorManagerSEI"/> 
+
+	    <interface name="crm.services.sei.LugarEventoContactoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.UsuarioManagerSEI"/> 
+
+	    <interface name="crm.services.sei.DescPrecioDiasManagerSEI"/> 
+
+	    <interface name="crm.services.sei.GerenciaComercialManagerSEI"/> 
+
+	    <interface name="crm.services.sei.CodigoPostalManagerSEI"/> 
+
+	    <interface name="crm.services.sei.CondicionPagoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.EstadoEventoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.IdiomaManagerSEI"/> 
+
+	    <interface name="crm.services.sei.AccesoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.TipoLugarEventoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.TipoEventoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.DiasAVencerManagerSEI"/> 
+
+	    <interface name="crm.services.sei.TipoArmadoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.LocalidadManagerSEI"/> 
+
+	    <interface name="crm.services.sei.NuevoClienteManagerSEI"/> 
+
+	    <interface name="crm.services.sei.UserAccessHistoryManagerSEI"/> 
+
+	    <interface name="crm.services.sei.CostoOperativoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.PerfilManagerSEI"/> 
+
+	    <interface name="crm.services.sei.SucursalManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ClienteContactoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.VendedorManagerSEI"/> 
+
+	    <interface name="crm.services.sei.TituloManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ClienteManagerSEI"/> 
+
+	    <interface name="crm.services.sei.PartidoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.PresupuestosManagerSEI"/> 
+
+	    <interface name="crm.services.sei.VistaPrecioServicioIdiomaManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ComisionManagerSEI"/> 
+
+	    <interface name="crm.services.sei.PaisManagerSEI"/> 
+
+	    <interface name="crm.services.sei.SeguimientoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.CategVendedorManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ServicioDescripcionManagerSEI"/> 
+
+	    <interface name="crm.services.sei.FamiliaServManagerSEI"/> 
+
+	    <interface name="crm.services.sei.UnidadBonusManagerSEI"/> 
+
+	    <interface name="crm.services.sei.TipoContactoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.MarcosLiquidacionManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ModalidadContratManagerSEI"/> 
+
+	    <interface name="crm.services.sei.DummyManagerSEI"/> 
+
+	    <interface name="crm.services.sei.MedioPagoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ProveedorManagerSEI"/> 
+
+	    <interface name="crm.services.sei.CategReferenciaManagerSEI"/> 
+
+	    <interface name="crm.services.sei.VendedorUsuarioManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ResultadoSeguimientoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.FechasProcesoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.UnidadNegocioManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ComisionSupervisorManagerSEI"/> 
+
+	    <interface name="crm.services.sei.AsistenteManagerSEI"/> 
+
+	    <interface name="crm.services.sei.TipoUniformeManagerSEI"/> 
+
+	    <interface name="crm.services.sei.LugarEventoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ServicioManagerSEI"/> 
+
+	    <interface name="crm.services.sei.VistaFamiliaServicioIdiomaManagerSEI"/> 
+
+	    <interface name="crm.services.sei.EventoUniformeManagerSEI"/> 
+
+	    <interface name="crm.services.sei.CategEventoManagerSEI"/> 
+
+	    <interface name="crm.services.sei.ListaPrecioCustomManagerSEI"/> 
+
+	    <interface name="crm.services.sei.SalaLugarManagerSEI"/> 
+
+	    <interface name="crm.services.sei.UnidadComercialManagerSEI"/> 
+
+	    <interface name="crm.services.sei.LiquidacionComisionesManagerSEI"/> 
+
+    </service>
+</configuration> 

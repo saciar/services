@@ -1,0 +1,1819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions name="CongressReportService" targetNamespace="http://servertransactionmanager/" xmlns:tns="http://servertransactionmanager/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://servertransactionmanager/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <schema targetNamespace="http://servertransactionmanager/types" xmlns:tns="http://servertransactionmanager/types" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="ArrayOfRemito">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:Remito[]"/></restriction></complexContent></complexType>
+      <complexType name="Remito">
+        <sequence>
+          <element name="calle" type="string"/>
+          <element name="conIVA" type="string"/>
+          <element name="cuit" type="string"/>
+          <element name="empresa" type="string"/>
+          <element name="equipos" type="tns:ArrayOfRemitoEquipos"/>
+          <element name="localidad" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="numero" type="string"/>
+          <element name="piso" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfRemitoEquipos">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:RemitoEquipos[]"/></restriction></complexContent></complexType>
+      <complexType name="RemitoEquipos">
+        <sequence>
+          <element name="codigo" type="string"/>
+          <element name="descripcion" type="string"/>
+          <element name="nroSerie" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfCondicionPagoGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:CondicionPagoGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="CondicionPagoGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="condPago" type="string"/>
+          <element name="estado" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="fechaFin" type="dateTime"/>
+          <element name="fechaInicio" type="dateTime"/>
+          <element name="lugar" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="total" type="double"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfPresupuestosConfirmadosGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:PresupuestosConfirmadosGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="PresupuestosConfirmadosGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="estado" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="total" type="double"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenServiciosDesconfirmada">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenServiciosDesconfirmada[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenServiciosDesconfirmada">
+        <sequence>
+          <element name="cantidadSalas" type="long"/>
+          <element name="categoria" type="string"/>
+          <element name="domicilio" type="string"/>
+          <element name="fechaEmision" type="string"/>
+          <element name="fechaFinalEvento" type="string"/>
+          <element name="fechaInicialEvento" type="string"/>
+          <element name="fechaInstalacion" type="string"/>
+          <element name="ingresoEquipos" type="string"/>
+          <element name="lugarEvento" type="string"/>
+          <element name="nombreEvento" type="string"/>
+          <element name="nombreFantasia" type="string"/>
+          <element name="observaciones" type="string"/>
+          <element name="operadores" type="tns:ArrayOfEventoOperador"/>
+          <element name="ordenServicio" type="long"/>
+          <element name="proveedores" type="tns:ArrayOfEventoProveedor"/>
+          <element name="responsableEvento" type="string"/>
+          <element name="responsableLugar" type="string"/>
+          <element name="salas" type="tns:ArrayOfOrdenServiciosDesconfirmadaSala"/>
+          <element name="seguridadEquipos" type="string"/>
+          <element name="telefonosLugar" type="string"/>
+          <element name="telefonosRespEvento" type="string"/>
+          <element name="telefonosRespLugar" type="string"/>
+          <element name="tipoEvento" type="string"/>
+          <element name="tipoLugar" type="string"/>
+          <element name="tipoUniforme" type="string"/>
+          <element name="totalPersonas" type="long"/>
+          <element name="unidad" type="string"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfEventoOperador">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:EventoOperador[]"/></restriction></complexContent></complexType>
+      <complexType name="EventoOperador">
+        <sequence>
+          <element name="nombreyApellido" type="string"/>
+          <element name="puesto" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfEventoProveedor">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:EventoProveedor[]"/></restriction></complexContent></complexType>
+      <complexType name="EventoProveedor">
+        <sequence>
+          <element name="domicilio" type="string"/>
+          <element name="proveedor" type="string"/>
+          <element name="proveedor_id" type="long"/>
+          <element name="telefonos" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenServiciosDesconfirmadaSala">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenServiciosDesconfirmadaSala[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenServiciosDesconfirmadaSala">
+        <sequence>
+          <element name="alto" type="double"/>
+          <element name="ancho" type="double"/>
+          <element name="capacidad" type="long"/>
+          <element name="fechaDesarme" type="string"/>
+          <element name="fechaFin" type="string"/>
+          <element name="fechaInicio" type="string"/>
+          <element name="fechaPruebas" type="string"/>
+          <element name="largo" type="double"/>
+          <element name="nombreSala" type="string"/>
+          <element name="observaciones" type="string"/>
+          <element name="salaId" type="long"/>
+          <element name="servicios" type="tns:ArrayOfOrdenServiciosDesconfirmadaServicios"/>
+          <element name="tipoArmado" type="string"/>
+          <element name="totalPersonas" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenServiciosDesconfirmadaServicios">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenServiciosDesconfirmadaServicios[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenServiciosDesconfirmadaServicios">
+        <sequence>
+          <element name="accesorios" type="tns:ArrayOfEventoAccesorio"/>
+          <element name="cantidad" type="long"/>
+          <element name="dias" type="int"/>
+          <element name="familia" type="string"/>
+          <element name="servicio" type="string"/>
+          <element name="servicioId" type="long"/>
+          <element name="subcontratado" type="boolean"/></sequence></complexType>
+      <complexType name="ArrayOfEventoAccesorio">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:EventoAccesorio[]"/></restriction></complexContent></complexType>
+      <complexType name="EventoAccesorio">
+        <sequence>
+          <element name="accesorio" type="string"/>
+          <element name="accesorioId" type="long"/>
+          <element name="cantidad" type="long"/></sequence></complexType>
+      <complexType name="InfoMensual">
+        <sequence>
+          <element name="cantidadConfirmados" type="long"/>
+          <element name="cantidadNoConfirmados" type="long"/>
+          <element name="cantidadTotal" type="long"/>
+          <element name="clientesNuevosConfirmados" type="tns:ArrayOfInfoMensualCliente"/>
+          <element name="clientesNuevosNoConfirmados" type="tns:ArrayOfInfoMensualCliente"/>
+          <element name="clientesViejosConfirmados" type="tns:ArrayOfInfoMensualCliente"/>
+          <element name="clientesViejosNoConfirmados" type="tns:ArrayOfInfoMensualCliente"/>
+          <element name="top10ClientesCantEventos" type="tns:ArrayOfInfoMensualCliente"/>
+          <element name="top10ClientesFacturado" type="tns:ArrayOfInfoMensualCliente"/>
+          <element name="totalConfirmados" type="double"/>
+          <element name="totalNoConfirmados" type="double"/></sequence></complexType>
+      <complexType name="ArrayOfInfoMensualCliente">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:InfoMensualCliente[]"/></restriction></complexContent></complexType>
+      <complexType name="InfoMensualCliente">
+        <sequence>
+          <element name="cantClientes" type="long"/>
+          <element name="codCliente" type="long"/>
+          <element name="facturacion" type="double"/>
+          <element name="nombre" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfPresupuestosCobradosGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:PresupuestosCobradosGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="PresupuestosCobradosGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="total" type="double"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfPresupuesto">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:Presupuesto[]"/></restriction></complexContent></complexType>
+      <complexType name="Presupuesto">
+        <sequence>
+          <element name="cancelacion" type="string"/>
+          <element name="cliente" type="string"/>
+          <element name="condPago" type="string"/>
+          <element name="condReserva" type="string"/>
+          <element name="contactoCliente" type="string"/>
+          <element name="cotizacion" type="double"/>
+          <element name="evento" type="string"/>
+          <element name="firma" type="string"/>
+          <element name="footer" type="string"/>
+          <element name="formaPago" type="string"/>
+          <element name="header" type="string"/>
+          <element name="instalacion" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="periodo" type="string"/>
+          <element name="personal" type="string"/>
+          <element name="salas" type="tns:ArrayOfPresupuestoSala"/>
+          <element name="seguridad" type="string"/>
+          <element name="simboloMoneda" type="string"/>
+          <element name="telContacto" type="string"/>
+          <element name="telVendedor" type="string"/>
+          <element name="tipoPresupuesto" type="string"/>
+          <element name="titulo" type="string"/>
+          <element name="validez" type="string"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfPresupuestoSala">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:PresupuestoSala[]"/></restriction></complexContent></complexType>
+      <complexType name="PresupuestoSala">
+        <sequence>
+          <element name="fechaFin" type="string"/>
+          <element name="fechaInicio" type="string"/>
+          <element name="nombreSala" type="string"/>
+          <element name="opcionales" type="tns:ArrayOfPresupuestoOpcional"/>
+          <element name="salaId" type="long"/>
+          <element name="servicios" type="tns:ArrayOfPresupuestoServicio"/></sequence></complexType>
+      <complexType name="ArrayOfPresupuestoOpcional">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:PresupuestoOpcional[]"/></restriction></complexContent></complexType>
+      <complexType name="PresupuestoOpcional">
+        <sequence>
+          <element name="cantidad" type="long"/>
+          <element name="caracteristicas" type="tns:ArrayOfstring"/>
+          <element name="dias" type="int"/>
+          <element name="familia" type="string"/>
+          <element name="importe" type="double"/>
+          <element name="moneda" type="string"/>
+          <element name="servicio" type="string"/>
+          <element name="servicioId" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfstring">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="string[]"/></restriction></complexContent></complexType>
+      <complexType name="ArrayOfPresupuestoServicio">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:PresupuestoServicio[]"/></restriction></complexContent></complexType>
+      <complexType name="PresupuestoServicio">
+        <sequence>
+          <element name="cantidad" type="long"/>
+          <element name="caracteristicas" type="tns:ArrayOfstring"/>
+          <element name="dias" type="int"/>
+          <element name="familia" type="string"/>
+          <element name="importe" type="double"/>
+          <element name="modalidad" type="long"/>
+          <element name="moneda" type="string"/>
+          <element name="servicio" type="string"/>
+          <element name="servicioId" type="long"/>
+          <element name="superFamilia" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfLimitesGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:LimitesGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="LimitesGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="estado" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="fechaFin" type="dateTime"/>
+          <element name="fechaInicio" type="dateTime"/>
+          <element name="lugar" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="total" type="double"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenServicio">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenServicio[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenServicio">
+        <sequence>
+          <element name="cantidadSalas" type="long"/>
+          <element name="categoria" type="string"/>
+          <element name="domicilio" type="string"/>
+          <element name="fechaEmision" type="string"/>
+          <element name="fechaFinalEvento" type="string"/>
+          <element name="fechaInicialEvento" type="string"/>
+          <element name="fechaInstalacion" type="string"/>
+          <element name="ingresoEquipos" type="string"/>
+          <element name="lugarEvento" type="string"/>
+          <element name="nombreEvento" type="string"/>
+          <element name="nombreFantasia" type="string"/>
+          <element name="observaciones" type="string"/>
+          <element name="operadores" type="tns:ArrayOfEventoOperador"/>
+          <element name="ordenServicio" type="long"/>
+          <element name="proveedores" type="tns:ArrayOfEventoProveedor"/>
+          <element name="responsableEvento" type="string"/>
+          <element name="responsableLugar" type="string"/>
+          <element name="salas" type="tns:ArrayOfOrdenServicioSala"/>
+          <element name="seguridadEquipos" type="string"/>
+          <element name="telefonosLugar" type="string"/>
+          <element name="telefonosRespEvento" type="string"/>
+          <element name="telefonosRespLugar" type="string"/>
+          <element name="tipoEvento" type="string"/>
+          <element name="tipoLugar" type="string"/>
+          <element name="tipoUniforme" type="string"/>
+          <element name="totalPersonas" type="long"/>
+          <element name="unidad" type="string"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenServicioSala">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenServicioSala[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenServicioSala">
+        <sequence>
+          <element name="alto" type="double"/>
+          <element name="ancho" type="double"/>
+          <element name="capacidad" type="long"/>
+          <element name="fechaDesarme" type="string"/>
+          <element name="fechaFin" type="string"/>
+          <element name="fechaInicio" type="string"/>
+          <element name="fechaPruebas" type="string"/>
+          <element name="largo" type="double"/>
+          <element name="nombreSala" type="string"/>
+          <element name="observaciones" type="string"/>
+          <element name="salaId" type="long"/>
+          <element name="servicios" type="tns:ArrayOfOrdenServicioServicio"/>
+          <element name="tipoArmado" type="string"/>
+          <element name="totalPersonas" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenServicioServicio">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenServicioServicio[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenServicioServicio">
+        <sequence>
+          <element name="accesorios" type="tns:ArrayOfEventoAccesorio"/>
+          <element name="cantidad" type="long"/>
+          <element name="dias" type="int"/>
+          <element name="familia" type="string"/>
+          <element name="servicio" type="string"/>
+          <element name="servicioId" type="long"/>
+          <element name="subcontratado" type="boolean"/></sequence></complexType>
+      <complexType name="ListaPrecios">
+        <sequence>
+          <element name="dtoTemporada" type="double"/>
+          <element name="familias" type="tns:ArrayOfListaPreciosFamilias"/>
+          <element name="mes" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfListaPreciosFamilias">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:ListaPreciosFamilias[]"/></restriction></complexContent></complexType>
+      <complexType name="ListaPreciosFamilias">
+        <sequence>
+          <element name="descripcion" type="string"/>
+          <element name="servicios" type="tns:ArrayOfListaPreciosServicios"/></sequence></complexType>
+      <complexType name="ArrayOfListaPreciosServicios">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:ListaPreciosServicios[]"/></restriction></complexContent></complexType>
+      <complexType name="ListaPreciosServicios">
+        <sequence>
+          <element name="cincoDias" type="double"/>
+          <element name="codigoServicio" type="long"/>
+          <element name="cuatroDias" type="double"/>
+          <element name="dosDias" type="double"/>
+          <element name="servicio" type="string"/>
+          <element name="tresDias" type="double"/>
+          <element name="unDia" type="double"/></sequence></complexType>
+      <complexType name="ArrayOfPorcentajeGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:PorcentajeGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="PorcentajeGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="estado" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="fechaFin" type="dateTime"/>
+          <element name="fechaInicio" type="dateTime"/>
+          <element name="lugar" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="total" type="double"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfDiaryPlannerSala">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:DiaryPlannerSala[]"/></restriction></complexContent></complexType>
+      <complexType name="DiaryPlannerSala">
+        <sequence>
+          <element name="estado" type="string"/>
+          <element name="fechaFinalEvento" type="string"/>
+          <element name="fechaFinalSala" type="string"/>
+          <element name="fechaInicialEvento" type="string"/>
+          <element name="fechaInicialSala" type="string"/>
+          <element name="fechaInstalacion" type="string"/>
+          <element name="lugarEvento" type="string"/>
+          <element name="nombreEvento" type="string"/>
+          <element name="nombreFantasia" type="string"/>
+          <element name="nombreSala" type="string"/>
+          <element name="numeroPresupuesto" type="long"/>
+          <element name="operadores" type="tns:ArrayOfDiaryPlannerOperador"/>
+          <element name="servicios" type="tns:ArrayOfDiaryPlannerServicio"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfDiaryPlannerOperador">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:DiaryPlannerOperador[]"/></restriction></complexContent></complexType>
+      <complexType name="DiaryPlannerOperador">
+        <sequence>
+          <element name="nombreyApellido" type="string"/>
+          <element name="puesto" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfDiaryPlannerServicio">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:DiaryPlannerServicio[]"/></restriction></complexContent></complexType>
+      <complexType name="DiaryPlannerServicio">
+        <sequence>
+          <element name="cantidad" type="long"/>
+          <element name="dias" type="int"/>
+          <element name="servicio" type="string"/>
+          <element name="servicioId" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfSubcontratadosGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:SubcontratadosGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="SubcontratadosGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="fechaFin" type="dateTime"/>
+          <element name="fechaInicio" type="dateTime"/>
+          <element name="nroPpto" type="long"/>
+          <element name="precioCompra" type="double"/>
+          <element name="precioVenta" type="double"/>
+          <element name="propio" type="string"/>
+          <element name="servicio" type="string"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="InfoSemanal">
+        <sequence>
+          <element name="cantidadConfirmados" type="long"/>
+          <element name="cantidadNoConfirmados" type="long"/>
+          <element name="cantidadTotal" type="long"/>
+          <element name="clientesNuevosConfirmados" type="tns:ArrayOfInfoSemanalCliente"/>
+          <element name="clientesNuevosNoConfirmados" type="tns:ArrayOfInfoSemanalCliente"/>
+          <element name="clientesViejosConfirmados" type="tns:ArrayOfInfoSemanalCliente"/>
+          <element name="clientesViejosNoConfirmados" type="tns:ArrayOfInfoSemanalCliente"/>
+          <element name="totalConfirmados" type="double"/>
+          <element name="totalNoConfirmados" type="double"/></sequence></complexType>
+      <complexType name="ArrayOfInfoSemanalCliente">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:InfoSemanalCliente[]"/></restriction></complexContent></complexType>
+      <complexType name="InfoSemanalCliente">
+        <sequence>
+          <element name="codCliente" type="long"/>
+          <element name="nombre" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfEvento">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:Evento[]"/></restriction></complexContent></complexType>
+      <complexType name="Evento">
+        <sequence>
+          <element name="adelantado" type="boolean"/>
+          <element name="adelanto" type="boolean"/>
+          <element name="cantidadSalas" type="long"/>
+          <element name="cobrado" type="boolean"/>
+          <element name="confirmado" type="boolean"/>
+          <element name="descuento" type="int"/>
+          <element name="facturado" type="boolean"/>
+          <element name="fechaFinalEvento" type="string"/>
+          <element name="fechaInicialEvento" type="string"/>
+          <element name="fechaInstalacion" type="string"/>
+          <element name="lugarEvento" type="string"/>
+          <element name="monto" type="double"/>
+          <element name="nombreEvento" type="string"/>
+          <element name="nombreFantasia" type="string"/>
+          <element name="nuevo" type="boolean"/>
+          <element name="numeroPresupuesto" type="long"/>
+          <element name="of" type="boolean"/>
+          <element name="operadores" type="tns:ArrayOfEventoOperador"/>
+          <element name="origen" type="string"/>
+          <element name="os" type="boolean"/>
+          <element name="precioModificado" type="long"/>
+          <element name="rentabilidad" type="double"/>
+          <element name="salas" type="tns:ArrayOfEventoSala"/>
+          <element name="sinPrecio" type="long"/>
+          <element name="subcontrataciones" type="long"/>
+          <element name="tipoEvento" type="string"/>
+          <element name="unidad" type="string"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfEventoSala">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:EventoSala[]"/></restriction></complexContent></complexType>
+      <complexType name="EventoSala">
+        <sequence>
+          <element name="fechaFin" type="string"/>
+          <element name="fechaInicio" type="string"/>
+          <element name="nombreSala" type="string"/>
+          <element name="salaId" type="long"/>
+          <element name="servicios" type="tns:ArrayOfEventoServicio"/>
+          <element name="totalPersonas" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfEventoServicio">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:EventoServicio[]"/></restriction></complexContent></complexType>
+      <complexType name="EventoServicio">
+        <sequence>
+          <element name="accesorios" type="tns:ArrayOfEventoAccesorio"/>
+          <element name="cantidad" type="long"/>
+          <element name="dias" type="int"/>
+          <element name="servicio" type="string"/>
+          <element name="servicioId" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenFacturacion">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenFacturacion[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenFacturacion">
+        <sequence>
+          <element name="adelanto" type="double"/>
+          <element name="cantidadSalas" type="long"/>
+          <element name="codProvCrn" type="string"/>
+          <element name="condIva" type="string"/>
+          <element name="condicionPago" type="string"/>
+          <element name="contactoCliente" type="string"/>
+          <element name="cuit" type="string"/>
+          <element name="diaHoraPago" type="string"/>
+          <element name="domicilioFactura" type="string"/>
+          <element name="domicilioLegal" type="string"/>
+          <element name="domicilioLugar" type="string"/>
+          <element name="domicilioPago" type="string"/>
+          <element name="fechaEmision" type="string"/>
+          <element name="fechaFinalEvento" type="string"/>
+          <element name="fechaInicialEvento" type="string"/>
+          <element name="lugarEvento" type="string"/>
+          <element name="medioPago" type="string"/>
+          <element name="nombreEvento" type="string"/>
+          <element name="nombreFantasia" type="string"/>
+          <element name="observaciones" type="string"/>
+          <element name="ordenFacturacion" type="long"/>
+          <element name="razonSocial" type="string"/>
+          <element name="responsablePago" type="string"/>
+          <element name="salas" type="tns:ArrayOfOrdenFacturacionSalas"/>
+          <element name="telefonoRespPago" type="string"/>
+          <element name="telefonosLugar" type="string"/>
+          <element name="tipoEvento" type="string"/>
+          <element name="unidad" type="string"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenFacturacionSalas">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenFacturacionSalas[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenFacturacionSalas">
+        <sequence>
+          <element name="fechaFin" type="string"/>
+          <element name="fechaInicio" type="string"/>
+          <element name="nombreSala" type="string"/>
+          <element name="salaId" type="long"/>
+          <element name="servicios" type="tns:ArrayOfOrdenFacturacionServicio"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenFacturacionServicio">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenFacturacionServicio[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenFacturacionServicio">
+        <sequence>
+          <element name="cantidad" type="long"/>
+          <element name="descuento" type="int"/>
+          <element name="dias" type="int"/>
+          <element name="familia" type="string"/>
+          <element name="importe" type="double"/>
+          <element name="servicio" type="string"/>
+          <element name="servicioId" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenCompra">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenCompra[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenCompra">
+        <sequence>
+          <element name="cantidadPersonas" type="long"/>
+          <element name="cantidadSalas" type="long"/>
+          <element name="codProvCrn" type="string"/>
+          <element name="condIva" type="string"/>
+          <element name="condicionPago" type="string"/>
+          <element name="contactoCliente" type="string"/>
+          <element name="cuit" type="string"/>
+          <element name="diaHoraPago" type="string"/>
+          <element name="domicilioFactura" type="string"/>
+          <element name="domicilioLegal" type="string"/>
+          <element name="domicilioLugar" type="string"/>
+          <element name="domicilioPago" type="string"/>
+          <element name="fechaEmision" type="string"/>
+          <element name="fechaFinalEvento" type="string"/>
+          <element name="fechaInicialEvento" type="string"/>
+          <element name="lugarEvento" type="string"/>
+          <element name="medioPago" type="string"/>
+          <element name="nombreEvento" type="string"/>
+          <element name="nombreFantasia" type="string"/>
+          <element name="ordenFacturacion" type="long"/>
+          <element name="razonSocial" type="string"/>
+          <element name="responsablePago" type="string"/>
+          <element name="salas" type="tns:ArrayOfOrdenCompraSalas"/>
+          <element name="telefonoRespPago" type="string"/>
+          <element name="telefonosLugar" type="string"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenCompraSalas">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenCompraSalas[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenCompraSalas">
+        <sequence>
+          <element name="fechaFin" type="string"/>
+          <element name="fechaInicio" type="string"/>
+          <element name="nombreSala" type="string"/>
+          <element name="salaId" type="long"/>
+          <element name="servicios" type="tns:ArrayOfOrdenCompraServicio"/></sequence></complexType>
+      <complexType name="ArrayOfOrdenCompraServicio">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:OrdenCompraServicio[]"/></restriction></complexContent></complexType>
+      <complexType name="OrdenCompraServicio">
+        <sequence>
+          <element name="cantidad" type="long"/>
+          <element name="dias" type="int"/>
+          <element name="familia" type="string"/>
+          <element name="importe" type="double"/>
+          <element name="servicio" type="string"/>
+          <element name="servicioId" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfACobrar">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:ACobrar[]"/></restriction></complexContent></complexType>
+      <complexType name="ACobrar">
+        <sequence>
+          <element name="ACobrar" type="double"/>
+          <element name="cliente" type="string"/>
+          <element name="direccion" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="factura" type="string"/>
+          <element name="fecha" type="dateTime"/>
+          <element name="fechaFactura" type="dateTime"/>
+          <element name="fechaHora" type="string"/>
+          <element name="nota" type="string"/>
+          <element name="nroppto" type="long"/>
+          <element name="pagado" type="double"/></sequence></complexType>
+      <complexType name="ArrayOfAdelanto">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:Adelanto[]"/></restriction></complexContent></complexType>
+      <complexType name="Adelanto">
+        <sequence>
+          <element name="adelanto" type="double"/>
+          <element name="cantidadSalas" type="long"/>
+          <element name="codProvCrn" type="string"/>
+          <element name="condIva" type="string"/>
+          <element name="condicionPago" type="string"/>
+          <element name="contactoCliente" type="string"/>
+          <element name="cuit" type="string"/>
+          <element name="diaHoraPago" type="string"/>
+          <element name="domicilioFactura" type="string"/>
+          <element name="domicilioLegal" type="string"/>
+          <element name="domicilioLugar" type="string"/>
+          <element name="domicilioPago" type="string"/>
+          <element name="fechaEmision" type="string"/>
+          <element name="fechaFinalEvento" type="string"/>
+          <element name="fechaInicialEvento" type="string"/>
+          <element name="lugarEvento" type="string"/>
+          <element name="medioPago" type="string"/>
+          <element name="nombreEvento" type="string"/>
+          <element name="nombreFantasia" type="string"/>
+          <element name="observaciones" type="string"/>
+          <element name="ordenFacturacion" type="long"/>
+          <element name="razonSocial" type="string"/>
+          <element name="responsablePago" type="string"/>
+          <element name="telefonoRespPago" type="string"/>
+          <element name="telefonosLugar" type="string"/>
+          <element name="unidad" type="string"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfPresupuestosGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:PresupuestosGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="PresupuestosGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="estado" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="fechaCreacion" type="dateTime"/>
+          <element name="fechaFin" type="dateTime"/>
+          <element name="fechaInicio" type="dateTime"/>
+          <element name="lugar" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="total" type="double"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfLimitesYEstadoGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:LimitesYEstadoGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="LimitesYEstadoGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="confirmado" type="string"/>
+          <element name="estado" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="fechaFin" type="dateTime"/>
+          <element name="fechaInicio" type="dateTime"/>
+          <element name="lugar" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="total" type="double"/>
+          <element name="vendedor" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfReferenciaGerencia">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:ReferenciaGerencia[]"/></restriction></complexContent></complexType>
+      <complexType name="ReferenciaGerencia">
+        <sequence>
+          <element name="cliente" type="string"/>
+          <element name="codReferencia" type="long"/>
+          <element name="estado" type="string"/>
+          <element name="evento" type="string"/>
+          <element name="fechaFin" type="dateTime"/>
+          <element name="fechaInicio" type="dateTime"/>
+          <element name="lugar" type="string"/>
+          <element name="nroPpto" type="long"/>
+          <element name="referencia" type="string"/>
+          <element name="total" type="double"/>
+          <element name="vendedor" type="string"/></sequence></complexType></schema></types>
+  <message name="RemitoReportSEI_findByNroPpto">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="RemitoReportSEI_findByNroPptoResponse">
+    <part name="result" type="ns2:ArrayOfRemito"/></message>
+  <message name="CondicionPagoGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/></message>
+  <message name="CondicionPagoGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfCondicionPagoGerencia"/></message>
+  <message name="CondicionPagoGerenciaReportSEI_findTotalPptos">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/></message>
+  <message name="CondicionPagoGerenciaReportSEI_findTotalPptosResponse">
+    <part name="result" type="xsd:int"/></message>
+  <message name="PresupuestosConfirmadosGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/></message>
+  <message name="PresupuestosConfirmadosGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfPresupuestosConfirmadosGerencia"/></message>
+  <message name="OsDesconfirmadaReportSEI_findByNroPpto">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="OsDesconfirmadaReportSEI_findByNroPptoResponse">
+    <part name="result" type="ns2:ArrayOfOrdenServiciosDesconfirmada"/></message>
+  <message name="OsDesconfirmadaReportSEI_savePdfFile">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="OsDesconfirmadaReportSEI_savePdfFileResponse"/>
+  <message name="OsDesconfirmadaReportSEI_sendOSByEmail2">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="String_3" type="xsd:string"/>
+    <part name="String_4" type="xsd:string"/>
+    <part name="String_5" type="xsd:string"/>
+    <part name="String_6" type="xsd:string"/>
+    <part name="String_7" type="xsd:string"/></message>
+  <message name="OsDesconfirmadaReportSEI_sendOSByEmail2Response">
+    <part name="result" type="xsd:boolean"/></message>
+  <message name="InfoMensualReportSEI_findByMonth">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/></message>
+  <message name="InfoMensualReportSEI_findByMonthResponse">
+    <part name="result" type="ns2:InfoMensual"/></message>
+  <message name="PresupuestosCobradosGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/></message>
+  <message name="PresupuestosCobradosGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfPresupuestosCobradosGerencia"/></message>
+  <message name="PresupuestoReportSEI_findByNroPpto">
+    <part name="long_1" type="xsd:long"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="long_3" type="xsd:long"/>
+    <part name="long_4" type="xsd:long"/>
+    <part name="long_5" type="xsd:long"/>
+    <part name="long_6" type="xsd:long"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/>
+    <part name="long_11" type="xsd:long"/>
+    <part name="long_12" type="xsd:long"/>
+    <part name="long_13" type="xsd:long"/>
+    <part name="long_14" type="xsd:long"/>
+    <part name="long_15" type="xsd:long"/>
+    <part name="double_16" type="xsd:double"/></message>
+  <message name="PresupuestoReportSEI_findByNroPptoResponse">
+    <part name="result" type="ns2:ArrayOfPresupuesto"/></message>
+  <message name="PresupuestoReportSEI_savePdfFile">
+    <part name="long_1" type="xsd:long"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="long_3" type="xsd:long"/>
+    <part name="long_4" type="xsd:long"/>
+    <part name="long_5" type="xsd:long"/>
+    <part name="long_6" type="xsd:long"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/>
+    <part name="long_11" type="xsd:long"/>
+    <part name="long_12" type="xsd:long"/>
+    <part name="long_13" type="xsd:long"/>
+    <part name="long_14" type="xsd:long"/>
+    <part name="long_15" type="xsd:long"/>
+    <part name="double_16" type="xsd:double"/></message>
+  <message name="PresupuestoReportSEI_savePdfFileResponse"/>
+  <message name="PresupuestoReportSEI_saveTxtFile">
+    <part name="long_1" type="xsd:long"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="long_3" type="xsd:long"/>
+    <part name="long_4" type="xsd:long"/>
+    <part name="long_5" type="xsd:long"/>
+    <part name="long_6" type="xsd:long"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/>
+    <part name="long_11" type="xsd:long"/>
+    <part name="long_12" type="xsd:long"/>
+    <part name="long_13" type="xsd:long"/>
+    <part name="long_14" type="xsd:long"/>
+    <part name="long_15" type="xsd:long"/>
+    <part name="double_16" type="xsd:double"/></message>
+  <message name="PresupuestoReportSEI_saveTxtFileResponse"/>
+  <message name="PresupuestoReportSEI_sendEmail">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/></message>
+  <message name="PresupuestoReportSEI_sendEmailResponse"/>
+  <message name="PresupuestoReportSEI_sendPresupByEmail">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="String_3" type="xsd:string"/></message>
+  <message name="PresupuestoReportSEI_sendPresupByEmailResponse"/>
+  <message name="InformeOSReportSEI_createInformeOS">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="InformeOSReportSEI_createInformeOSResponse"/>
+  <message name="PresupuestoExcelReportSEI_findByNroPpto">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="PresupuestoExcelReportSEI_findByNroPptoResponse">
+    <part name="result" type="ns2:ArrayOfPresupuesto"/></message>
+  <message name="LimitesGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="double_10" type="xsd:double"/></message>
+  <message name="LimitesGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfLimitesGerencia"/></message>
+  <message name="OrdenServicioReportSEI_findByNroPpto">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="OrdenServicioReportSEI_findByNroPptoResponse">
+    <part name="result" type="ns2:ArrayOfOrdenServicio"/></message>
+  <message name="OrdenServicioReportSEI_savePdfFile">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="OrdenServicioReportSEI_savePdfFileResponse"/>
+  <message name="OrdenServicioReportSEI_sendOSByEmail">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="String_3" type="xsd:string"/>
+    <part name="String_4" type="xsd:string"/>
+    <part name="String_5" type="xsd:string"/>
+    <part name="String_6" type="xsd:string"/></message>
+  <message name="OrdenServicioReportSEI_sendOSByEmailResponse">
+    <part name="result" type="xsd:boolean"/></message>
+  <message name="OrdenServicioReportSEI_sendOSByEmail2">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="String_3" type="xsd:string"/>
+    <part name="String_4" type="xsd:string"/>
+    <part name="String_5" type="xsd:string"/>
+    <part name="String_6" type="xsd:string"/>
+    <part name="String_7" type="xsd:string"/></message>
+  <message name="OrdenServicioReportSEI_sendOSByEmail2Response">
+    <part name="result" type="xsd:boolean"/></message>
+  <message name="ListaPreciosReportSEI_findByFecha">
+    <part name="String_1" type="xsd:string"/></message>
+  <message name="ListaPreciosReportSEI_findByFechaResponse">
+    <part name="result" type="ns2:ListaPrecios"/></message>
+  <message name="ListaPreciosReportSEI_findByMes">
+    <part name="int_1" type="xsd:int"/></message>
+  <message name="ListaPreciosReportSEI_findByMesResponse">
+    <part name="result" type="ns2:ListaPrecios"/></message>
+  <message name="PorcentajeGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/></message>
+  <message name="PorcentajeGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfPorcentajeGerencia"/></message>
+  <message name="PorcentajeGerenciaReportSEI_findTotalPptos">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/></message>
+  <message name="PorcentajeGerenciaReportSEI_findTotalPptosResponse">
+    <part name="result" type="xsd:int"/></message>
+  <message name="DiaryPlannerReportSEI_findByDateRange">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/></message>
+  <message name="DiaryPlannerReportSEI_findByDateRangeResponse">
+    <part name="result" type="ns2:ArrayOfDiaryPlannerSala"/></message>
+  <message name="DiaryPlannerReportSEI_findByDay">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="String_4" type="xsd:string"/></message>
+  <message name="DiaryPlannerReportSEI_findByDayResponse">
+    <part name="result" type="ns2:ArrayOfDiaryPlannerSala"/></message>
+  <message name="SubcontratadosGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/></message>
+  <message name="SubcontratadosGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfSubcontratadosGerencia"/></message>
+  <message name="SubcontratadosGerenciaReportSEI_findTotalPptos">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/></message>
+  <message name="SubcontratadosGerenciaReportSEI_findTotalPptosResponse">
+    <part name="result" type="xsd:int"/></message>
+  <message name="InfoSemanalReportSEI_findByWeek">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/></message>
+  <message name="InfoSemanalReportSEI_findByWeekResponse">
+    <part name="result" type="ns2:InfoSemanal"/></message>
+  <message name="EventReportSEI_findByDay">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/></message>
+  <message name="EventReportSEI_findByDayResponse">
+    <part name="result" type="ns2:ArrayOfEvento"/></message>
+  <message name="EventReportSEI_findByDayAndUC">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="long_4" type="xsd:long"/></message>
+  <message name="EventReportSEI_findByDayAndUCResponse">
+    <part name="result" type="ns2:ArrayOfEvento"/></message>
+  <message name="EventReportSEI_findByDayAndVendedor">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="long_4" type="xsd:long"/></message>
+  <message name="EventReportSEI_findByDayAndVendedorResponse">
+    <part name="result" type="ns2:ArrayOfEvento"/></message>
+  <message name="EventReportSEI_findByWeek">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/></message>
+  <message name="EventReportSEI_findByWeekResponse">
+    <part name="result" type="ns2:ArrayOfEvento"/></message>
+  <message name="EventReportSEI_findByWeekAndUC">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="long_3" type="xsd:long"/></message>
+  <message name="EventReportSEI_findByWeekAndUCResponse">
+    <part name="result" type="ns2:ArrayOfEvento"/></message>
+  <message name="EventReportSEI_findByWeekAndVendedor">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="long_3" type="xsd:long"/></message>
+  <message name="EventReportSEI_findByWeekAndVendedorResponse">
+    <part name="result" type="ns2:ArrayOfEvento"/></message>
+  <message name="OrdenFacturacionReportSEI_findByNroPpto">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="OrdenFacturacionReportSEI_findByNroPptoResponse">
+    <part name="result" type="ns2:ArrayOfOrdenFacturacion"/></message>
+  <message name="OrdenFacturacionReportSEI_savePdfFile">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="OrdenFacturacionReportSEI_savePdfFileResponse"/>
+  <message name="OrdenFacturacionReportSEI_sendOFByEmail">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/></message>
+  <message name="OrdenFacturacionReportSEI_sendOFByEmailResponse">
+    <part name="result" type="xsd:boolean"/></message>
+  <message name="OrdenFacturacionReportSEI_sendOFByEmail2">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="String_3" type="xsd:string"/></message>
+  <message name="OrdenFacturacionReportSEI_sendOFByEmail2Response">
+    <part name="result" type="xsd:boolean"/></message>
+  <message name="PorcentajeComercialesReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/></message>
+  <message name="PorcentajeComercialesReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfPorcentajeGerencia"/></message>
+  <message name="PorcentajeComercialesReportSEI_findTotalPptos">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/></message>
+  <message name="PorcentajeComercialesReportSEI_findTotalPptosResponse">
+    <part name="result" type="xsd:int"/></message>
+  <message name="OrdenCompraReportSEI_findByNroPpto">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="OrdenCompraReportSEI_findByNroPptoResponse">
+    <part name="result" type="ns2:ArrayOfOrdenCompra"/></message>
+  <message name="OrdenCompraReportSEI_savePdfFile">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="OrdenCompraReportSEI_savePdfFileResponse"/>
+  <message name="OrdenCompraReportSEI_sendOFByEmail">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/></message>
+  <message name="OrdenCompraReportSEI_sendOFByEmailResponse"/>
+  <message name="ACobrarReportSEI_findByDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/></message>
+  <message name="ACobrarReportSEI_findByDateResponse">
+    <part name="result" type="ns2:ArrayOfACobrar"/></message>
+  <message name="AdelantoReportSEI_findByNroPpto">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="AdelantoReportSEI_findByNroPptoResponse">
+    <part name="result" type="ns2:ArrayOfAdelanto"/></message>
+  <message name="AdelantoReportSEI_savePdfFile">
+    <part name="long_1" type="xsd:long"/></message>
+  <message name="AdelantoReportSEI_savePdfFileResponse"/>
+  <message name="AdelantoReportSEI_sendOFByEmail">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/></message>
+  <message name="AdelantoReportSEI_sendOFByEmailResponse"/>
+  <message name="AdelantoReportSEI_sendOFByEmail2">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="String_3" type="xsd:string"/></message>
+  <message name="AdelantoReportSEI_sendOFByEmail2Response">
+    <part name="result" type="xsd:boolean"/></message>
+  <message name="PresupuestosGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/>
+    <part name="String_11" type="xsd:string"/>
+    <part name="int_12" type="xsd:int"/></message>
+  <message name="PresupuestosGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfPresupuestosGerencia"/></message>
+  <message name="PresupuestosGerenciaReportSEI_findByRangeDateAndCreateDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/>
+    <part name="int_11" type="xsd:int"/>
+    <part name="int_12" type="xsd:int"/>
+    <part name="int_13" type="xsd:int"/>
+    <part name="String_14" type="xsd:string"/>
+    <part name="int_15" type="xsd:int"/></message>
+  <message name="PresupuestosGerenciaReportSEI_findByRangeDateAndCreateDateResponse">
+    <part name="result" type="ns2:ArrayOfPresupuestosGerencia"/></message>
+  <message name="PresupuestosGerenciaReportSEI_findByRangeDateCobranzas">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="long_10" type="xsd:long"/>
+    <part name="String_11" type="xsd:string"/></message>
+  <message name="PresupuestosGerenciaReportSEI_findByRangeDateCobranzasResponse">
+    <part name="result" type="ns2:ArrayOfPresupuestosGerencia"/></message>
+  <message name="LimitesYEstadosGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/>
+    <part name="double_10" type="xsd:double"/>
+    <part name="long_11" type="xsd:long"/>
+    <part name="long_12" type="xsd:long"/></message>
+  <message name="LimitesYEstadosGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfLimitesYEstadoGerencia"/></message>
+  <message name="LimitesYEstadosGerenciaReportSEI_findTotalPptos">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/></message>
+  <message name="LimitesYEstadosGerenciaReportSEI_findTotalPptosResponse">
+    <part name="result" type="xsd:int"/></message>
+  <message name="ReferenciaGerenciaReportSEI_findByRangeDate">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/>
+    <part name="long_7" type="xsd:long"/>
+    <part name="long_8" type="xsd:long"/>
+    <part name="long_9" type="xsd:long"/></message>
+  <message name="ReferenciaGerenciaReportSEI_findByRangeDateResponse">
+    <part name="result" type="ns2:ArrayOfReferenciaGerencia"/></message>
+  <message name="ReferenciaGerenciaReportSEI_findTotalPptos">
+    <part name="int_1" type="xsd:int"/>
+    <part name="int_2" type="xsd:int"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="int_5" type="xsd:int"/>
+    <part name="int_6" type="xsd:int"/></message>
+  <message name="ReferenciaGerenciaReportSEI_findTotalPptosResponse">
+    <part name="result" type="xsd:int"/></message>
+  <portType name="RemitoReportSEI">
+    <operation name="findByNroPpto" parameterOrder="long_1">
+      <input message="tns:RemitoReportSEI_findByNroPpto"/>
+      <output message="tns:RemitoReportSEI_findByNroPptoResponse"/></operation></portType>
+  <portType name="CondicionPagoGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9">
+      <input message="tns:CondicionPagoGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:CondicionPagoGerenciaReportSEI_findByRangeDateResponse"/></operation>
+    <operation name="findTotalPptos" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6">
+      <input message="tns:CondicionPagoGerenciaReportSEI_findTotalPptos"/>
+      <output message="tns:CondicionPagoGerenciaReportSEI_findTotalPptosResponse"/></operation></portType>
+  <portType name="PresupuestosConfirmadosGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6">
+      <input message="tns:PresupuestosConfirmadosGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:PresupuestosConfirmadosGerenciaReportSEI_findByRangeDateResponse"/></operation></portType>
+  <portType name="OsDesconfirmadaReportSEI">
+    <operation name="findByNroPpto" parameterOrder="long_1">
+      <input message="tns:OsDesconfirmadaReportSEI_findByNroPpto"/>
+      <output message="tns:OsDesconfirmadaReportSEI_findByNroPptoResponse"/></operation>
+    <operation name="savePdfFile" parameterOrder="long_1">
+      <input message="tns:OsDesconfirmadaReportSEI_savePdfFile"/>
+      <output message="tns:OsDesconfirmadaReportSEI_savePdfFileResponse"/></operation>
+    <operation name="sendOSByEmail2" parameterOrder="long_1 String_2 String_3 String_4 String_5 String_6 String_7">
+      <input message="tns:OsDesconfirmadaReportSEI_sendOSByEmail2"/>
+      <output message="tns:OsDesconfirmadaReportSEI_sendOSByEmail2Response"/></operation></portType>
+  <portType name="InfoMensualReportSEI">
+    <operation name="findByMonth" parameterOrder="int_1 int_2">
+      <input message="tns:InfoMensualReportSEI_findByMonth"/>
+      <output message="tns:InfoMensualReportSEI_findByMonthResponse"/></operation></portType>
+  <portType name="PresupuestosCobradosGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6">
+      <input message="tns:PresupuestosCobradosGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:PresupuestosCobradosGerenciaReportSEI_findByRangeDateResponse"/></operation></portType>
+  <portType name="PresupuestoReportSEI">
+    <operation name="findByNroPpto" parameterOrder="long_1 long_2 long_3 long_4 long_5 long_6 long_7 long_8 long_9 long_10 long_11 long_12 long_13 long_14 long_15 double_16">
+      <input message="tns:PresupuestoReportSEI_findByNroPpto"/>
+      <output message="tns:PresupuestoReportSEI_findByNroPptoResponse"/></operation>
+    <operation name="savePdfFile" parameterOrder="long_1 long_2 long_3 long_4 long_5 long_6 long_7 long_8 long_9 long_10 long_11 long_12 long_13 long_14 long_15 double_16">
+      <input message="tns:PresupuestoReportSEI_savePdfFile"/>
+      <output message="tns:PresupuestoReportSEI_savePdfFileResponse"/></operation>
+    <operation name="saveTxtFile" parameterOrder="long_1 long_2 long_3 long_4 long_5 long_6 long_7 long_8 long_9 long_10 long_11 long_12 long_13 long_14 long_15 double_16">
+      <input message="tns:PresupuestoReportSEI_saveTxtFile"/>
+      <output message="tns:PresupuestoReportSEI_saveTxtFileResponse"/></operation>
+    <operation name="sendEmail" parameterOrder="String_1 String_2">
+      <input message="tns:PresupuestoReportSEI_sendEmail"/>
+      <output message="tns:PresupuestoReportSEI_sendEmailResponse"/></operation>
+    <operation name="sendPresupByEmail" parameterOrder="long_1 String_2 String_3">
+      <input message="tns:PresupuestoReportSEI_sendPresupByEmail"/>
+      <output message="tns:PresupuestoReportSEI_sendPresupByEmailResponse"/></operation></portType>
+  <portType name="InformeOSReportSEI">
+    <operation name="createInformeOS" parameterOrder="long_1">
+      <input message="tns:InformeOSReportSEI_createInformeOS"/>
+      <output message="tns:InformeOSReportSEI_createInformeOSResponse"/></operation></portType>
+  <portType name="PresupuestoExcelReportSEI">
+    <operation name="findByNroPpto" parameterOrder="long_1">
+      <input message="tns:PresupuestoExcelReportSEI_findByNroPpto"/>
+      <output message="tns:PresupuestoExcelReportSEI_findByNroPptoResponse"/></operation></portType>
+  <portType name="LimitesGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9 double_10">
+      <input message="tns:LimitesGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:LimitesGerenciaReportSEI_findByRangeDateResponse"/></operation></portType>
+  <portType name="OrdenServicioReportSEI">
+    <operation name="findByNroPpto" parameterOrder="long_1">
+      <input message="tns:OrdenServicioReportSEI_findByNroPpto"/>
+      <output message="tns:OrdenServicioReportSEI_findByNroPptoResponse"/></operation>
+    <operation name="savePdfFile" parameterOrder="long_1">
+      <input message="tns:OrdenServicioReportSEI_savePdfFile"/>
+      <output message="tns:OrdenServicioReportSEI_savePdfFileResponse"/></operation>
+    <operation name="sendOSByEmail" parameterOrder="long_1 String_2 String_3 String_4 String_5 String_6">
+      <input message="tns:OrdenServicioReportSEI_sendOSByEmail"/>
+      <output message="tns:OrdenServicioReportSEI_sendOSByEmailResponse"/></operation>
+    <operation name="sendOSByEmail2" parameterOrder="long_1 String_2 String_3 String_4 String_5 String_6 String_7">
+      <input message="tns:OrdenServicioReportSEI_sendOSByEmail2"/>
+      <output message="tns:OrdenServicioReportSEI_sendOSByEmail2Response"/></operation></portType>
+  <portType name="ListaPreciosReportSEI">
+    <operation name="findByFecha" parameterOrder="String_1">
+      <input message="tns:ListaPreciosReportSEI_findByFecha"/>
+      <output message="tns:ListaPreciosReportSEI_findByFechaResponse"/></operation>
+    <operation name="findByMes" parameterOrder="int_1">
+      <input message="tns:ListaPreciosReportSEI_findByMes"/>
+      <output message="tns:ListaPreciosReportSEI_findByMesResponse"/></operation></portType>
+  <portType name="PorcentajeGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9 long_10">
+      <input message="tns:PorcentajeGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:PorcentajeGerenciaReportSEI_findByRangeDateResponse"/></operation>
+    <operation name="findTotalPptos" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6">
+      <input message="tns:PorcentajeGerenciaReportSEI_findTotalPptos"/>
+      <output message="tns:PorcentajeGerenciaReportSEI_findTotalPptosResponse"/></operation></portType>
+  <portType name="DiaryPlannerReportSEI">
+    <operation name="findByDateRange" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6">
+      <input message="tns:DiaryPlannerReportSEI_findByDateRange"/>
+      <output message="tns:DiaryPlannerReportSEI_findByDateRangeResponse"/></operation>
+    <operation name="findByDay" parameterOrder="int_1 int_2 int_3 String_4">
+      <input message="tns:DiaryPlannerReportSEI_findByDay"/>
+      <output message="tns:DiaryPlannerReportSEI_findByDayResponse"/></operation></portType>
+  <portType name="SubcontratadosGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9 long_10">
+      <input message="tns:SubcontratadosGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:SubcontratadosGerenciaReportSEI_findByRangeDateResponse"/></operation>
+    <operation name="findTotalPptos" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6">
+      <input message="tns:SubcontratadosGerenciaReportSEI_findTotalPptos"/>
+      <output message="tns:SubcontratadosGerenciaReportSEI_findTotalPptosResponse"/></operation></portType>
+  <portType name="InfoSemanalReportSEI">
+    <operation name="findByWeek" parameterOrder="int_1 int_2">
+      <input message="tns:InfoSemanalReportSEI_findByWeek"/>
+      <output message="tns:InfoSemanalReportSEI_findByWeekResponse"/></operation></portType>
+  <portType name="EventReportSEI">
+    <operation name="findByDay" parameterOrder="int_1 int_2 int_3">
+      <input message="tns:EventReportSEI_findByDay"/>
+      <output message="tns:EventReportSEI_findByDayResponse"/></operation>
+    <operation name="findByDayAndUC" parameterOrder="int_1 int_2 int_3 long_4">
+      <input message="tns:EventReportSEI_findByDayAndUC"/>
+      <output message="tns:EventReportSEI_findByDayAndUCResponse"/></operation>
+    <operation name="findByDayAndVendedor" parameterOrder="int_1 int_2 int_3 long_4">
+      <input message="tns:EventReportSEI_findByDayAndVendedor"/>
+      <output message="tns:EventReportSEI_findByDayAndVendedorResponse"/></operation>
+    <operation name="findByWeek" parameterOrder="int_1 int_2">
+      <input message="tns:EventReportSEI_findByWeek"/>
+      <output message="tns:EventReportSEI_findByWeekResponse"/></operation>
+    <operation name="findByWeekAndUC" parameterOrder="int_1 int_2 long_3">
+      <input message="tns:EventReportSEI_findByWeekAndUC"/>
+      <output message="tns:EventReportSEI_findByWeekAndUCResponse"/></operation>
+    <operation name="findByWeekAndVendedor" parameterOrder="int_1 int_2 long_3">
+      <input message="tns:EventReportSEI_findByWeekAndVendedor"/>
+      <output message="tns:EventReportSEI_findByWeekAndVendedorResponse"/></operation></portType>
+  <portType name="OrdenFacturacionReportSEI">
+    <operation name="findByNroPpto" parameterOrder="long_1">
+      <input message="tns:OrdenFacturacionReportSEI_findByNroPpto"/>
+      <output message="tns:OrdenFacturacionReportSEI_findByNroPptoResponse"/></operation>
+    <operation name="savePdfFile" parameterOrder="long_1">
+      <input message="tns:OrdenFacturacionReportSEI_savePdfFile"/>
+      <output message="tns:OrdenFacturacionReportSEI_savePdfFileResponse"/></operation>
+    <operation name="sendOFByEmail" parameterOrder="long_1 String_2">
+      <input message="tns:OrdenFacturacionReportSEI_sendOFByEmail"/>
+      <output message="tns:OrdenFacturacionReportSEI_sendOFByEmailResponse"/></operation>
+    <operation name="sendOFByEmail2" parameterOrder="long_1 String_2 String_3">
+      <input message="tns:OrdenFacturacionReportSEI_sendOFByEmail2"/>
+      <output message="tns:OrdenFacturacionReportSEI_sendOFByEmail2Response"/></operation></portType>
+  <portType name="PorcentajeComercialesReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9 long_10">
+      <input message="tns:PorcentajeComercialesReportSEI_findByRangeDate"/>
+      <output message="tns:PorcentajeComercialesReportSEI_findByRangeDateResponse"/></operation>
+    <operation name="findTotalPptos" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8">
+      <input message="tns:PorcentajeComercialesReportSEI_findTotalPptos"/>
+      <output message="tns:PorcentajeComercialesReportSEI_findTotalPptosResponse"/></operation></portType>
+  <portType name="OrdenCompraReportSEI">
+    <operation name="findByNroPpto" parameterOrder="long_1">
+      <input message="tns:OrdenCompraReportSEI_findByNroPpto"/>
+      <output message="tns:OrdenCompraReportSEI_findByNroPptoResponse"/></operation>
+    <operation name="savePdfFile" parameterOrder="long_1">
+      <input message="tns:OrdenCompraReportSEI_savePdfFile"/>
+      <output message="tns:OrdenCompraReportSEI_savePdfFileResponse"/></operation>
+    <operation name="sendOFByEmail" parameterOrder="long_1 String_2">
+      <input message="tns:OrdenCompraReportSEI_sendOFByEmail"/>
+      <output message="tns:OrdenCompraReportSEI_sendOFByEmailResponse"/></operation></portType>
+  <portType name="ACobrarReportSEI">
+    <operation name="findByDate" parameterOrder="int_1 int_2 int_3">
+      <input message="tns:ACobrarReportSEI_findByDate"/>
+      <output message="tns:ACobrarReportSEI_findByDateResponse"/></operation></portType>
+  <portType name="AdelantoReportSEI">
+    <operation name="findByNroPpto" parameterOrder="long_1">
+      <input message="tns:AdelantoReportSEI_findByNroPpto"/>
+      <output message="tns:AdelantoReportSEI_findByNroPptoResponse"/></operation>
+    <operation name="savePdfFile" parameterOrder="long_1">
+      <input message="tns:AdelantoReportSEI_savePdfFile"/>
+      <output message="tns:AdelantoReportSEI_savePdfFileResponse"/></operation>
+    <operation name="sendOFByEmail" parameterOrder="long_1 String_2">
+      <input message="tns:AdelantoReportSEI_sendOFByEmail"/>
+      <output message="tns:AdelantoReportSEI_sendOFByEmailResponse"/></operation>
+    <operation name="sendOFByEmail2" parameterOrder="long_1 String_2 String_3">
+      <input message="tns:AdelantoReportSEI_sendOFByEmail2"/>
+      <output message="tns:AdelantoReportSEI_sendOFByEmail2Response"/></operation></portType>
+  <portType name="PresupuestosGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9 long_10 String_11 int_12">
+      <input message="tns:PresupuestosGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:PresupuestosGerenciaReportSEI_findByRangeDateResponse"/></operation>
+    <operation name="findByRangeDateAndCreateDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9 long_10 int_11 int_12 int_13 String_14 int_15">
+      <input message="tns:PresupuestosGerenciaReportSEI_findByRangeDateAndCreateDate"/>
+      <output message="tns:PresupuestosGerenciaReportSEI_findByRangeDateAndCreateDateResponse"/></operation>
+    <operation name="findByRangeDateCobranzas" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9 long_10 String_11">
+      <input message="tns:PresupuestosGerenciaReportSEI_findByRangeDateCobranzas"/>
+      <output message="tns:PresupuestosGerenciaReportSEI_findByRangeDateCobranzasResponse"/></operation></portType>
+  <portType name="LimitesYEstadosGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9 double_10 long_11 long_12">
+      <input message="tns:LimitesYEstadosGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:LimitesYEstadosGerenciaReportSEI_findByRangeDateResponse"/></operation>
+    <operation name="findTotalPptos" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6">
+      <input message="tns:LimitesYEstadosGerenciaReportSEI_findTotalPptos"/>
+      <output message="tns:LimitesYEstadosGerenciaReportSEI_findTotalPptosResponse"/></operation></portType>
+  <portType name="ReferenciaGerenciaReportSEI">
+    <operation name="findByRangeDate" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6 long_7 long_8 long_9">
+      <input message="tns:ReferenciaGerenciaReportSEI_findByRangeDate"/>
+      <output message="tns:ReferenciaGerenciaReportSEI_findByRangeDateResponse"/></operation>
+    <operation name="findTotalPptos" parameterOrder="int_1 int_2 int_3 int_4 int_5 int_6">
+      <input message="tns:ReferenciaGerenciaReportSEI_findTotalPptos"/>
+      <output message="tns:ReferenciaGerenciaReportSEI_findTotalPptosResponse"/></operation></portType>
+  <binding name="RemitoReportSEIBinding" type="tns:RemitoReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByNroPpto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="CondicionPagoGerenciaReportSEIBinding" type="tns:CondicionPagoGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findTotalPptos">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="PresupuestosConfirmadosGerenciaReportSEIBinding" type="tns:PresupuestosConfirmadosGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="OsDesconfirmadaReportSEIBinding" type="tns:OsDesconfirmadaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByNroPpto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="savePdfFile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendOSByEmail2">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="InfoMensualReportSEIBinding" type="tns:InfoMensualReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByMonth">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="PresupuestosCobradosGerenciaReportSEIBinding" type="tns:PresupuestosCobradosGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="PresupuestoReportSEIBinding" type="tns:PresupuestoReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByNroPpto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="savePdfFile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="saveTxtFile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendEmail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendPresupByEmail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="InformeOSReportSEIBinding" type="tns:InformeOSReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="createInformeOS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="PresupuestoExcelReportSEIBinding" type="tns:PresupuestoExcelReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByNroPpto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="LimitesGerenciaReportSEIBinding" type="tns:LimitesGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="OrdenServicioReportSEIBinding" type="tns:OrdenServicioReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByNroPpto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="savePdfFile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendOSByEmail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendOSByEmail2">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="ListaPreciosReportSEIBinding" type="tns:ListaPreciosReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByFecha">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByMes">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="PorcentajeGerenciaReportSEIBinding" type="tns:PorcentajeGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findTotalPptos">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="DiaryPlannerReportSEIBinding" type="tns:DiaryPlannerReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByDateRange">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByDay">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="SubcontratadosGerenciaReportSEIBinding" type="tns:SubcontratadosGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findTotalPptos">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="InfoSemanalReportSEIBinding" type="tns:InfoSemanalReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByWeek">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="EventReportSEIBinding" type="tns:EventReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByDay">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByDayAndUC">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByDayAndVendedor">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByWeek">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByWeekAndUC">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByWeekAndVendedor">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="OrdenFacturacionReportSEIBinding" type="tns:OrdenFacturacionReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByNroPpto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="savePdfFile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendOFByEmail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendOFByEmail2">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="PorcentajeComercialesReportSEIBinding" type="tns:PorcentajeComercialesReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findTotalPptos">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="OrdenCompraReportSEIBinding" type="tns:OrdenCompraReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByNroPpto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="savePdfFile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendOFByEmail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="ACobrarReportSEIBinding" type="tns:ACobrarReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="AdelantoReportSEIBinding" type="tns:AdelantoReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByNroPpto">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="savePdfFile">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendOFByEmail">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="sendOFByEmail2">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="PresupuestosGerenciaReportSEIBinding" type="tns:PresupuestosGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByRangeDateAndCreateDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findByRangeDateCobranzas">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="LimitesYEstadosGerenciaReportSEIBinding" type="tns:LimitesYEstadosGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findTotalPptos">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <binding name="ReferenciaGerenciaReportSEIBinding" type="tns:ReferenciaGerenciaReportSEI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+    <operation name="findByRangeDate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation>
+    <operation name="findTotalPptos">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" use="encoded" namespace="http://servertransactionmanager/"/></output></operation></binding>
+  <service name="CongressReportService">
+    <port name="RemitoReportSEIPort" binding="tns:RemitoReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="CondicionPagoGerenciaReportSEIPort" binding="tns:CondicionPagoGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="PresupuestosConfirmadosGerenciaReportSEIPort" binding="tns:PresupuestosConfirmadosGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="OsDesconfirmadaReportSEIPort" binding="tns:OsDesconfirmadaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="InfoMensualReportSEIPort" binding="tns:InfoMensualReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="PresupuestosCobradosGerenciaReportSEIPort" binding="tns:PresupuestosCobradosGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="PresupuestoReportSEIPort" binding="tns:PresupuestoReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="InformeOSReportSEIPort" binding="tns:InformeOSReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="PresupuestoExcelReportSEIPort" binding="tns:PresupuestoExcelReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="LimitesGerenciaReportSEIPort" binding="tns:LimitesGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="OrdenServicioReportSEIPort" binding="tns:OrdenServicioReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="ListaPreciosReportSEIPort" binding="tns:ListaPreciosReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="PorcentajeGerenciaReportSEIPort" binding="tns:PorcentajeGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="DiaryPlannerReportSEIPort" binding="tns:DiaryPlannerReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="SubcontratadosGerenciaReportSEIPort" binding="tns:SubcontratadosGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="InfoSemanalReportSEIPort" binding="tns:InfoSemanalReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="EventReportSEIPort" binding="tns:EventReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="OrdenFacturacionReportSEIPort" binding="tns:OrdenFacturacionReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="PorcentajeComercialesReportSEIPort" binding="tns:PorcentajeComercialesReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="OrdenCompraReportSEIPort" binding="tns:OrdenCompraReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="ACobrarReportSEIPort" binding="tns:ACobrarReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="AdelantoReportSEIPort" binding="tns:AdelantoReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="PresupuestosGerenciaReportSEIPort" binding="tns:PresupuestosGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="LimitesYEstadosGerenciaReportSEIPort" binding="tns:LimitesYEstadosGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port>
+    <port name="ReferenciaGerenciaReportSEIPort" binding="tns:ReferenciaGerenciaReportSEIBinding">
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/></port></service></definitions>
